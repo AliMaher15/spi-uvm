@@ -1,11 +1,14 @@
 class spi_master_driver_c extends uvm_driver#(spi_item_c);
     
-    `uvm_component_param_utils(spi_master_driver_c)
+    `uvm_component_utils(spi_master_driver_c)
     
     // Interface and Config handles
+    //
 	virtual spi_master_intf         vif;
 	spi_master_agent_cfg_c          m_cfg;
 
+    // Variables
+    //
     // reset event activated by agent
     event           reset_driver;
     // item recieved from sequence
@@ -16,6 +19,9 @@ class spi_master_driver_c extends uvm_driver#(spi_item_c);
         super.new(name,parent);
     endfunction
 
+
+    // Class Methods
+    //
     //  Function: build_phase
     extern function void build_phase(uvm_phase phase);
     //  Task: run_phase

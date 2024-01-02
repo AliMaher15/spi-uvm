@@ -1,25 +1,30 @@
-class axi_master_agent_cfg_c #(DATA_WIDTH = 32) extends uvm_object;
+class spi_master_agent_cfg_c extends uvm_object;
 
-    `uvm_object_param_utils_begin(axi_master_agent_cfg_c #(DATA_WIDTH))
-    `uvm_object_utils_end
+    // Interface handle
+    //
+    virtual     spi_master_intf       vif;
 
-    //Variables
-    virtual axi_master_intf #(DATA_WIDTH) vif;
-    uvm_active_passive_enum active = UVM_ACTIVE;
-    // has_functional_coverage
-    // has_Scoreboard
-
-    // Randimized variables and configurations
+    // Variables
+    //
+    uvm_active_passive_enum     active = UVM_ACTIVE;
+    // bit     has_functional_coverage = 1
+    // bit     has_Scoreboard = 1
     
 
     //Constraints
+    //
 
 
-    //Functions
-
-    //  Constructor: new
+    //  Constructor
     function new(string name = "");
         super.new(name);
     endfunction: new
+
+
+    // Class Methods
+    //
+
+    `uvm_object_utils_begin(spi_master_agent_cfg_c)
+    `uvm_object_utils_end
     
-endclass : axi_master_agent_cfg_c
+endclass : spi_master_agent_cfg_c
