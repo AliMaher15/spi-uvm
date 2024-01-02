@@ -1,0 +1,86 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /axi_tb_pkg
+=== Design Unit: work.axi_tb_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      2        na        na    75.00%
+        Coverpoints/Crosses          2        na        na        na
+            Covergroup Bins          5         4         1    80.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /axi_tb_pkg/axi_coverage_c/all_zeros_ones_cg     50.00%        100          -    Uncovered            
+    covered/total bins:                                     1          2          -                      
+    missing/total bins:                                     1          2          -                      
+    % Hit:                                             50.00%        100          -                      
+    Coverpoint data_cp                                 50.00%        100          -    Uncovered            
+        covered/total bins:                                 1          2          -                      
+        missing/total bins:                                 1          2          -                      
+        % Hit:                                         50.00%        100          -                      
+        bin zeros                                          18          1          -    Covered              
+        bin ones                                            0          1          -    ZERO                 
+ TYPE /axi_tb_pkg/axi_coverage_c/delay_cg             100.00%        100          -    Covered              
+    covered/total bins:                                     3          3          -                      
+    missing/total bins:                                     0          3          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint delay_cp                               100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/axi_tb_pkg::axi_coverage_c::delay_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     3          3          -                      
+    missing/total bins:                                     0          3          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint delay_cp                               100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin high                                          112          1          -    Covered              
+        bin low                                             1          1          -    Covered              
+        bin none                                          112          1          -    Covered              
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /axi_tb_pkg/axi_coverage_c/all_zeros_ones_cg     50.00%        100          -    Uncovered            
+    covered/total bins:                                     1          2          -                      
+    missing/total bins:                                     1          2          -                      
+    % Hit:                                             50.00%        100          -                      
+    Coverpoint data_cp                                 50.00%        100          -    Uncovered            
+        covered/total bins:                                 1          2          -                      
+        missing/total bins:                                 1          2          -                      
+        % Hit:                                         50.00%        100          -                      
+        bin zeros                                          18          1          -    Covered              
+        bin ones                                            0          1          -    ZERO                 
+ TYPE /axi_tb_pkg/axi_coverage_c/delay_cg             100.00%        100          -    Covered              
+    covered/total bins:                                     3          3          -                      
+    missing/total bins:                                     0          3          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint delay_cp                               100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/axi_tb_pkg::axi_coverage_c::delay_cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     3          3          -                      
+    missing/total bins:                                     0          3          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint delay_cp                               100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin high                                          112          1          -    Covered              
+        bin low                                             1          1          -    Covered              
+        bin none                                          112          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 75.00%  COVERGROUP TYPES: 2
+
+Total Coverage By Instance (filtered view): 75.00%
+

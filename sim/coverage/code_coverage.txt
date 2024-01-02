@@ -1,0 +1,102 @@
+Coverage Report Summary Data by instance
+
+=================================================================================
+=== Instance: /axi_tb_top/axi_m_dut
+=== Design Unit: work.axis_m
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        16        16         0   100.00%
+    Expressions                      2         1         1    50.00%
+    Statements                      22        22         0   100.00%
+
+=================================================================================
+=== Instance: /axi_tb_top/axi_s_dut
+=== Design Unit: work.axis_s
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        12        11         1    91.66%
+    Conditions                       7         4         3    57.14%
+    Expressions                      2         2         0   100.00%
+    Statements                      16        15         1    93.75%
+
+=================================================================================
+=== Instance: /axi_tb_top
+=== Design Unit: work.axi_tb_top
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       8         8         0   100.00%
+
+=================================================================================
+=== Instance: /axi_item_pkg
+=== Design Unit: work.axi_item_pkg
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                       220         0       220     0.00%
+    Conditions                      42         0        42     0.00%
+    Statements                     171         2       169     1.16%
+
+=================================================================================
+=== Instance: /axi_slave_agent_pkg
+=== Design Unit: work.axi_slave_agent_pkg
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        28         6        22    21.42%
+    Conditions                       8         5         3    62.50%
+    Statements                     102        67        35    65.68%
+
+=================================================================================
+=== Instance: /axi_master_agent_pkg
+=== Design Unit: work.axi_master_agent_pkg
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        28         6        22    21.42%
+    Conditions                       7         3         4    42.85%
+    Statements                      98        65        33    66.32%
+
+=================================================================================
+=== Instance: /axi_tb_pkg
+=== Design Unit: work.axi_tb_pkg
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        88        27        61    30.68%
+    Conditions                      11         0        11     0.00%
+    Covergroups                      2        na        na    75.00%
+        Coverpoints/Crosses          2        na        na        na
+            Covergroup Bins          5         4         1    80.00%
+    Statements                     122        76        46    62.29%
+
+=================================================================================
+=== Instance: /axi_seq_pkg
+=== Design Unit: work.axi_seq_pkg
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Assertions                       1         1         0   100.00%
+    Branches                        24         0        24     0.00%
+    Conditions                       5         0         5     0.00%
+    Statements                      26         6        20    23.07%
+
+=================================================================================
+=== Instance: /axi_test_pkg
+=== Design Unit: work.axi_test_pkg
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        64        13        51    20.31%
+    Conditions                       7         0         7     0.00%
+    Statements                     101        48        53    47.52%
+
+
+TOTAL COVERGROUP COVERAGE: 75.00%  COVERGROUP TYPES: 2
+
+TOTAL ASSERTION COVERAGE: 100.00%  ASSERTIONS: 1
+
+Total Coverage By Instance (filtered view): 54.44%
+
