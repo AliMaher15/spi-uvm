@@ -1,57 +1,42 @@
-`timescale 1ns/1ps
-
-module axi_tb_top();
+// Module: spi_tb_top
+// 
+// note: spi_slave and modes aren't tested, mode is fixed at 1
+module spi_tb_top();
+    `timescale 1ns/1ps
 
 import uvm_pkg::*;
 `include "uvm_macros.svh"
-import axi_global_params_pkg::*;
-import axi_usertypes_pkg::*;
-import axi_tb_pkg::*;
-import axi_seq_pkg::*;
-import axi_test_pkg::*;
+import spi_global_params_pkg::*;
+import spi_tb_pkg::*;
+import spi_seq_pkg::*;
+import spi_test_pkg::*;
 
 bit clk;
 
 //************** INTERFACES INSTANTS ****************//
 rst_intf rst_i ();
 
-axi_master_intf #(.DATA_WIDTH(DATA_WIDTH)) AXI_MASTER_IF (.aclk(clk), .areset_n(rst_i.res_n));
-axi_slave_intf  #(.DATA_WIDTH(DATA_WIDTH)) AXI_SLAVE_IF  (.aclk(clk), .areset_n(rst_i.res_n));
+spi_master_intf            SPI_MASTER_IF (.i_Clk(clk), .i_Rst_L(rst_i.res_n));
+spi_controller_intf        SPI_CONT_IF   (.i_Clk(clk), .i_Rst_L(rst_i.res_n))
 //***************************************************//
 
 //**************** DUT INSTANTS *********************//
 SPI_Master #(.SPI_MODE(1) 
-         )
+            )
 spi_master_dut (
-     .aclk(clk),
-     .areset_n(rst_i.res_n),
-
-     .data(AXI_MASTER_IF.data_in),
-     .send(AXI_MASTER_IF.send_in),
-
-     .tready(AXI_MASTER_IF.tready_in), 
-     .tvalid(AXI_MASTER_IF.tvalid_out),
-     .tlast(AXI_MASTER_IF.tlast_out),
-     .tdata(AXI_MASTER_IF.tdata_out),
-
-     .finish(AXI_MASTER_IF.finish_out)
-     );
-
-SPI_Slave #(.SPI_MODE(1) 
-         )
-spi_slave_dut (
-     .aclk(clk),
-     .areset_n(rst_i.res_n),
-
-     .data(AXI_MASTER_IF.data_in),
-     .send(AXI_MASTER_IF.send_in),
-
-     .tready(AXI_MASTER_IF.tready_in), 
-     .tvalid(AXI_MASTER_IF.tvalid_out),
-     .tlast(AXI_MASTER_IF.tlast_out),
-     .tdata(AXI_MASTER_IF.tdata_out),
-
-     .finish(AXI_MASTER_IF.finish_out)
+     .i_Rst_L(clk),
+     .i_Clk(rst_i.res_n),
+     // TX (MOSI) Signals
+     .i_TX_Byte(SPI_CONT_IF.i_TX_Byte),
+     .i_TX_DV(SPI_CONT_IF.i_TX_DV),
+     .o_TX_Ready(SPI_CONT_IF.o_TX_Ready),
+     // RX (MISO) Signals
+     .o_RX_DV(SPI_CONT_IF.o_RX_DV),
+     .o_RX_Byte(SPI_CONT_IF.o_RX_Byte),
+     // SPI Interface
+     .o_SPI_Clk(SPI_MASTER_IF.o_SPI_Clk),
+     .i_SPI_MISO(SPI_MASTER_IF.i_SPI_MISO),
+     .o_SPI_MOSI(SPI_MASTER_IF.o_SPI_MOSI)
      );
 //***************************************************//
 
@@ -62,11 +47,11 @@ spi_slave_dut (
 //***************** START TEST **********************//
 // pass the interfaces handles then run the test
 initial begin
-    //            interface type                access hierarch    instance name
+    // Set interfaces handles to uvm_test_top
     uvm_resource_db#(virtual rst_intf)::set("rst_intf", "rst_i", rst_i);
 
-    uvm_config_db#(virtual axi_master_intf#(.DATA_WIDTH(DATA_WIDTH)))::set(null, "uvm_test_top", "AXI_MASTER_IF", AXI_MASTER_IF);
-    uvm_config_db#(virtual axi_slave_intf #(.DATA_WIDTH(DATA_WIDTH)))::set(null, "uvm_test_top", "AXI_SLAVE_IF" , AXI_SLAVE_IF);
+    uvm_config_db#(virtual spi_master_intf    )::set(null, "uvm_test_top", "SPI_MASTER_IF", SPI_MASTER_IF);
+    uvm_config_db#(virtual spi_controller_intf)::set(null, "uvm_test_top", "SPI_CONT_IF" , SPI_CONT_IF);
 
     run_test();
 end
@@ -74,11 +59,11 @@ end
 
 //***************** CLOCK ***************************//
 initial begin
-    clk = 1;
+    clk = 0;
     forever begin  
         #(CLK_PERIOD/2);  clk = ~clk;
     end
 end
 //***************************************************// 
 
-endmodule : axi_tb_top
+endmodule : spi_tb_top

@@ -1,22 +1,25 @@
-class axi_vsequencer_c extends uvm_sequencer;
+// Class: spi_vsequencer_c
+//
+// holds handles to all agents' sequencers below in the hierarchy
+class spi_vsequencer_c extends uvm_sequencer;
 
     // register in factory
-    `uvm_component_utils(axi_vsequencer_c)
+    `uvm_component_utils(spi_vsequencer_c)
 
     // contains the following sequencers
-    axi_master_agent_seqr_c   m_axi_master_agent_seqr;
-    axi_slave_agent_seqr_c    m_axi_slave_agent_seqr;
+    spi_master_agent_seqr_c       m_spi_master_agent_seqr;
+    spi_controller_agent_c        m_spi_controller_agent_seqr;
     // env config
-    axi_env_cfg_c             m_cfg;
+    spi_env_cfg_c                 m_cfg;
     
     function new(string name, uvm_component parent);
         super.new(name, parent);  
     endfunction
 
     function void build_phase(uvm_phase phase);
-        if(!uvm_config_db #(axi_env_cfg_c)::get(this, "","m_axi_env_cfg", m_cfg))
-       `uvm_fatal(get_full_name(), "Failed to get axi_env_cfg from database")
+        if(!uvm_config_db #(spi_env_cfg_c)::get(this, "","m_spi_env_cfg", m_cfg))
+       `uvm_fatal(get_full_name(), "Failed to get env_cfg from database")
     endfunction: build_phase
     
 
-endclass : axi_vsequencer_c
+endclass : spi_vsequencer_c

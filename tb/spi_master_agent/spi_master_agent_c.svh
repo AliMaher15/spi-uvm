@@ -1,3 +1,5 @@
+// Class: spi_master_agent_c
+//
 class spi_master_agent_c extends uvm_agent;
 
     `uvm_component_utils(spi_master_agent_c)

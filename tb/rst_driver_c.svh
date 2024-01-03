@@ -1,4 +1,5 @@
-// class: rst_drv_c
+// Class: rst_drv_c
+//
 class rst_driver_c extends uvm_driver;
 
    // var: intf_name

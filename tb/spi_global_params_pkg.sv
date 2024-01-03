@@ -1,6 +1,5 @@
-package axi_global_params_pkg;
+package spi_global_params_pkg;
 
-    parameter   CLK_PERIOD        = `def_axi_CLK_PERIOD;
-    parameter   DATA_WIDTH        = `def_axi_DATA_WIDTH;
+    parameter   CLK_PERIOD        = `def_spi_CLK_PERIOD;
     
-endpackage: axi_global_params_pkg
+endpackage: spi_global_params_pkg

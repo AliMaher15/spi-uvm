@@ -1,20 +1,21 @@
-package axi_tb_pkg;
+package spi_tb_pkg;
 
     import uvm_pkg::*;
     `include "uvm_macros.svh"
  
-    import axi_item_pkg::*;
-    import axi_master_agent_pkg::*;
-    import axi_slave_agent_pkg::*;
-    import axi_global_params_pkg::*;
-    import axi_usertypes_pkg::*;
+    import spi_item_pkg::*;
+    import spi_master_agent_pkg::*;
+    import spi_controller_agent_pkg::*;
+    import spi_global_params_pkg::*;
 
     `include "rst_driver_c.svh"
 
-    `include "axi_checkers/axi_coverage_c.svh"
-    `include "axi_checkers/axi_scoreboard_c.svh"
-    `include "axi_env_cfg_c.svh"
-    `include "axi_vsequencer_c.svh"	
-    `include "axi_env_c.svh"    
+    `include "spi_checkers/spi_coverage_c.svh"
+    `include "spi_checkers/spi_sb_comparator_c.svh"
+    `include "spi_checkers/spi_sb_predictor_c.svh"
+    `include "spi_checkers/spi_scoreboard_c.svh"
+    `include "spi_env_cfg_c.svh"
+    `include "spi_vsequencer_c.svh"	
+    `include "spi_env_c.svh"    
 
-endpackage : axi_tb_pkg
+endpackage : spi_tb_pkg

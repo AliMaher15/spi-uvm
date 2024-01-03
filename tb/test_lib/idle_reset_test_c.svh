@@ -1,4 +1,7 @@
-class idle_reset_test_c extends axi_base_test_c;
+// Class: idle_reset_test_c
+//
+// jump to pre_reset_phase after the simulation and all transactions are ended during shutdown phase
+class idle_reset_test_c extends spi_base_test_c;
     `uvm_component_utils(idle_reset_test_c)
  
     // field: run_count

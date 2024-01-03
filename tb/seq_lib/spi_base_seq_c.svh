@@ -1,8 +1,10 @@
-class axi_base_seq_c extends  uvm_sequence #(uvm_sequence_item);
+// Class: spi_base_seq_c
+//
+class spi_base_seq_c extends  uvm_sequence #(uvm_sequence_item);
 
-    `uvm_object_utils(axi_base_seq_c)
+    `uvm_object_utils(spi_base_seq_c)
   
-    axi_env_cfg_c     m_cfg;
+    spi_env_cfg_c     m_cfg;
   
   
     function new(string name = "");
@@ -16,7 +18,7 @@ class axi_base_seq_c extends  uvm_sequence #(uvm_sequence_item);
     endtask : body
   
   
-  endclass : axi_base_seq_c
+  endclass : spi_base_seq_c
   
   
   
