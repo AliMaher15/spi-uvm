@@ -93,14 +93,14 @@ task spi_sb_comparator_c::run_phase(uvm_phase phase);
             if (exp_mosi.SPI_MOSI == out_mosi.SPI_MOSI) begin
                 PASS();
                 `uvm_info ("PASS ", $sformatf("Actual=%s   Expected=%s \n",
-                                    out_mosi.output2string(), 
-                                    exp_mosi.convert2string()), UVM_HIGH)
+                                    out_mosi.sprint(), 
+                                    exp_mosi.sprint()), UVM_HIGH)
             end
             else begin 
                 ERROR();
                 `uvm_error("ERROR", $sformatf("Actual=%s   Expected=%s \n",  
-                                    out_mosi.output2string(),
-                                    exp_mosi.convert2string()))
+                                    out_mosi.sprint(),
+                                    exp_mosi.sprint()))
             end
         end
         forever begin 
@@ -113,14 +113,14 @@ task spi_sb_comparator_c::run_phase(uvm_phase phase);
             if (exp_rxbyte.o_RX_Byte == out_rxbyte.o_RX_Byte) begin
                 PASS();
                 `uvm_info ("PASS ", $sformatf("Actual=%s   Expected=%s \n",
-                                    out_rxbyte.output2string(), 
-                                    exp_rxbyte.convert2string()), UVM_HIGH)
+                                    out_rxbyte.sprint(), 
+                                    exp_rxbyte.sprint()), UVM_HIGH)
             end
             else begin 
                 ERROR();
                 `uvm_error("ERROR", $sformatf("Actual=%s   Expected=%s \n",  
-                                    out_rxbyte.output2string(),
-                                    exp_rxbyte.convert2string()))
+                                    out_rxbyte.sprint(),
+                                    exp_rxbyte.sprint()))
             end
         end
     join

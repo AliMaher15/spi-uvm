@@ -70,7 +70,7 @@ function spi_item_c spi_sb_predictor_c::rxbyte_predictor(input spi_item_c t);
     spi_item_c    tr;
     tr = spi_item_c::type_id::create("tr");
     //-------------------------
-    `uvm_info(get_type_name(), t.convert2string(), UVM_HIGH)
+    `uvm_info(get_type_name(), t.sprint(), UVM_HIGH)
 
     // prediction: RX_Byte should be equal to what was driven on MISO
     predicted_rxbyte = t.SPI_MISO;
@@ -99,7 +99,7 @@ function spi_item_c spi_sb_predictor_c::mosi_predictor(input spi_item_c t);
     spi_item_c    tr;
     tr = spi_item_c::type_id::create("tr");
     //-------------------------
-    `uvm_info(get_type_name(), t.convert2string(), UVM_HIGH)
+    `uvm_info(get_type_name(), t.sprint(), UVM_HIGH)
 
     // prediction: MOSI should equal to TX_Byte
     predicted_spi_mosi = t.i_TX_Byte;
