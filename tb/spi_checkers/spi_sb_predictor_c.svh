@@ -5,7 +5,7 @@
 class spi_sb_predictor_c extends uvm_component;
     `uvm_component_utils(spi_master_sb_predictor_c);
 
-    // Analysis Implimintations
+    // Analysis Implementations
     //
     // connected with spi master monitor to get MISO and predict RX_Byte
     `uvm_analysis_imp_decl(_spi_m)
