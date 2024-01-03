@@ -6,15 +6,6 @@ interface spi_master_intf
                         input i_Rst_L
                       );
 
-// TX (MOSI) Signals
-logic    [7:0]    i_TX_Byte;        // Byte to transmit on MOSI
-logic             i_TX_DV;          // Data Valid Pulse with i_TX_Byte
-logic             o_TX_Ready;       // Transmit Ready for next byte
-
-// RX (MISO) Signals
-logic             o_RX_DV;          // Data Valid pulse (1 clock cycle)
-logic    [7:0]    o_RX_Byte;        // Byte received on MISO
-
 // SPI Interface
 logic             i_SPI_MISO;       // master input, slave output serialized data (LSB first)
 logic             o_SPI_MOSI;       // master output, slave input serialized data (MSB first)

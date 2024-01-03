@@ -20,8 +20,6 @@ class spi_controller_monitor_c extends uvm_monitor;
     // Counstructor
     function new(string name, uvm_component parent);
         super.new(name,parent);
-        spi_controller_mon_inp_ap = new("spi_controller_mon_inp_ap", this);
-        spi_controller_mon_out_ap = new("spi_controller_mon_out_ap", this);
     endfunction
 
 
@@ -48,6 +46,8 @@ function void spi_controller_monitor_c::build_phase(uvm_phase phase);
         `uvm_fatal(get_full_name(), "Failed to get agent_cfg from database")
 
     vif = m_cfg.vif;
+    spi_controller_mon_inp_ap = new("spi_controller_mon_inp_ap", this);
+    spi_controller_mon_out_ap = new("spi_controller_mon_out_ap", this);
 endfunction: build_phase
 
 

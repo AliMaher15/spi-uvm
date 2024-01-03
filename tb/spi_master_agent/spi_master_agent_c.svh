@@ -18,8 +18,6 @@ class spi_master_agent_c extends uvm_agent;
     // Constructor
     function new(string name, uvm_component parent);
         super.new(name,parent);
-        spi_master_agent_inp_ap  = new("spi_master_agent_inp_ap", this);
-        spi_master_agent_out_ap  = new("spi_master_agent_out_ap", this);
     endfunction : new
 
     // Class Methods
@@ -60,6 +58,8 @@ function void spi_master_agent_c::build_phase(uvm_phase phase);
         m_driver.m_cfg = m_cfg;
     end
     
+    spi_master_agent_inp_ap  = new("spi_master_agent_inp_ap", this);
+    spi_master_agent_out_ap  = new("spi_master_agent_out_ap", this);
 endfunction: build_phase
 
 
