@@ -1,5 +1,7 @@
 // Class: spi_sb_predictor_c
 //
+// read MISO    (spi master interface side)   -> predict RX_Byte (controller side)
+// read TX_Byte (controller side)             -> predict MOSI    (spi master interface side)
 class spi_sb_predictor_c extends uvm_component;
     `uvm_component_utils(spi_master_sb_predictor_c);
 
@@ -53,12 +55,10 @@ endfunction: build_phase
 
 // Function: write_spi_m
 function void spi_sb_predictor_c::write_spi_m(input spi_item_c t);
-    if (!item.rst_op) begin
-        spi_item_c     exp_tr;
-        //-------------------------
-        exp_tr = rxbyte_predictor(t);
-        spi_master_predicted_rxbyte_ap.write(exp_tr);
-    end 
+    spi_item_c     exp_tr;
+    //-------------------------
+    exp_tr = rxbyte_predictor(t);
+    spi_master_predicted_rxbyte_ap.write(exp_tr);
 endfunction : write_spi_m
 
 
@@ -84,12 +84,10 @@ endfunction: rxbyte_predictor
 
 // Function: write_spi_cont
 function void spi_sb_predictor_c::write_spi_cont(input spi_item_c t);
-    if (!item.rst_op) begin
-        spi_item_c     exp_tr;
-        //-------------------------
-        exp_tr = mosi_predictor(t);
-        spi_master_predicted_mosi_ap.write(exp_tr);
-    end 
+    spi_item_c     exp_tr;
+    //-------------------------
+    exp_tr = mosi_predictor(t);
+    spi_master_predicted_mosi_ap.write(exp_tr);
 endfunction : write_spi_cont
 
 

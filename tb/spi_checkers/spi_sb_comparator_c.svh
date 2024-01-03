@@ -81,13 +81,15 @@ endfunction : connect_phase
 // Task: run_phase
 task spi_sb_comparator_c::run_phase(uvm_phase phase);
     spi_item_c     exp_mosi, out_mosi;
-    spi_item_c     exp_rxbyte, out_rx_byte;
+    spi_item_c     exp_rxbyte, out_rxbyte;
     fork
         forever begin 
             `uvm_info("sb_comparator run task", "WAITING for expected mosi output", UVM_DEBUG)
             mosi_expfifo.get(exp_mosi); 
+            if(exp_mosi.rst_op) continue;
             `uvm_info("sb_comparator run task", "WAITING for actual mosi output"  , UVM_DEBUG)
             mosi_outfifo.get(out_mosi); 
+            if(out_mosi.rst_op) continue;
             if (exp_mosi.SPI_MOSI == out_mosi.SPI_MOSI) begin
                 PASS();
                 `uvm_info ("PASS ", $sformatf("Actual=%s   Expected=%s \n",
@@ -104,18 +106,20 @@ task spi_sb_comparator_c::run_phase(uvm_phase phase);
         forever begin 
             `uvm_info("sb_comparator run task", "WAITING for expected rx_byte output", UVM_DEBUG)
             rxbyte_expfifo.get(exp_rxbyte); 
+            if(exp_rxbyte.rst_op) continue;
             `uvm_info("sb_comparator run task", "WAITING for actual rx_byte output"  , UVM_DEBUG)
-            rxbyte_outfifo.get(out_rx_byte); 
-            if (exp_rxbyte.o_RX_Byte == out_rx_byte.o_RX_Byte) begin
+            rxbyte_outfifo.get(out_rxbyte); 
+            if(out_rxbyte.rst_op) continue;
+            if (exp_rxbyte.o_RX_Byte == out_rxbyte.o_RX_Byte) begin
                 PASS();
                 `uvm_info ("PASS ", $sformatf("Actual=%s   Expected=%s \n",
-                                    out_rx_byte.output2string(), 
+                                    out_rxbyte.output2string(), 
                                     exp_rxbyte.convert2string()), UVM_HIGH)
             end
             else begin 
                 ERROR();
                 `uvm_error("ERROR", $sformatf("Actual=%s   Expected=%s \n",  
-                                    out_rx_byte.output2string(),
+                                    out_rxbyte.output2string(),
                                     exp_rxbyte.convert2string()))
             end
         end
