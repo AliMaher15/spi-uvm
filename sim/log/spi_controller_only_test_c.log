@@ -1,0 +1,221 @@
+# vsim top_opt -c -assertdebug -debugDB -fsmdebug -coverage "+UVM_TESTNAME=spi_controller_only_test_c" 
+# Start time: 20:48:02 on Jan 04,2024
+# Loading sv_std.std
+# Loading work.spi_master_intf(fast)
+# Loading work.spi_controller_intf(fast)
+# Loading work.rst_intf(fast)
+# Loading work.spi_global_params_pkg(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.spi_item_pkg(fast)
+# Loading work.spi_controller_agent_pkg(fast)
+# Loading work.spi_master_agent_pkg(fast)
+# Loading work.spi_tb_pkg(fast)
+# Loading work.spi_seq_pkg(fast)
+# Loading work.spi_test_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.spi_tb_top(fast)
+# Loading work.rst_intf(fast__2)
+# Loading work.spi_master_intf(fast__2)
+# Loading work.spi_controller_intf(fast__2)
+# Loading work.SPI_Master(fast)
+# ** Warning: (vsim-3764) Stand-alone call to function 'read_by_name' treated as implicit void cast.
+#    Time: 0 ps  Iteration: 0  Region: /spi_tb_pkg::rst_driver_c File: D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/rst_driver_c.svh Line: 33
+# Loading C:/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ** Note: (vsim-8900) Creating design debug database vsim.dbg.
+# 1
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test spi_controller_only_test_c...
+# -----------------------------------------------------------------------------------------
+# Name                                    Type                                Size  Value  
+# -----------------------------------------------------------------------------------------
+# uvm_test_top                            spi_controller_only_test_c          -     @483   
+#   m_rst_drv                             rst_driver_c                        -     @506   
+#     rsp_port                            uvm_analysis_port                   -     @521   
+#     seq_item_port                       uvm_seq_item_pull_port              -     @513   
+#     intf_name                           string                              5     rst_i  
+#     reset_time_ps                       integral                            32    'd72012
+#   m_spi_env                             spi_env_c                           -     @499   
+#     m_coverage                          spi_coverage_c                      -     @676   
+#       spi_cont_mon_in_imp               uvm_analysis_imp_spi_cont_mon_in    -     @691   
+#       spi_master_mon_in_imp             uvm_analysis_imp_spi_master_mon_in  -     @683   
+#     m_scoreboard                        spi_scoreboard_c                    -     @669   
+#       axp_miso_in                       uvm_analysis_export                 -     @699   
+#       axp_mosi_out                      uvm_analysis_export                 -     @707   
+#       axp_rxbyte_out                    uvm_analysis_export                 -     @723   
+#       axp_txbyte_in                     uvm_analysis_export                 -     @715   
+#       cmp                               spi_sb_comparator_c                 -     @738   
+#         axp_mosi_in                     uvm_analysis_export                 -     @745   
+#         axp_mosi_out                    uvm_analysis_export                 -     @753   
+#         axp_rxbyte_in                   uvm_analysis_export                 -     @761   
+#         axp_rxbyte_out                  uvm_analysis_export                 -     @769   
+#         mosi_expfifo                    uvm_tlm_analysis_fifo #(T)          -     @777   
+#           analysis_export               uvm_analysis_imp                    -     @816   
+#           get_ap                        uvm_analysis_port                   -     @808   
+#           get_peek_export               uvm_get_peek_imp                    -     @792   
+#           put_ap                        uvm_analysis_port                   -     @800   
+#           put_export                    uvm_put_imp                         -     @784   
+#         mosi_outfifo                    uvm_tlm_analysis_fifo #(T)          -     @824   
+#           analysis_export               uvm_analysis_imp                    -     @863   
+#           get_ap                        uvm_analysis_port                   -     @855   
+#           get_peek_export               uvm_get_peek_imp                    -     @839   
+#           put_ap                        uvm_analysis_port                   -     @847   
+#           put_export                    uvm_put_imp                         -     @831   
+#         rxbyte_expfifo                  uvm_tlm_analysis_fifo #(T)          -     @871   
+#           analysis_export               uvm_analysis_imp                    -     @910   
+#           get_ap                        uvm_analysis_port                   -     @902   
+#           get_peek_export               uvm_get_peek_imp                    -     @886   
+#           put_ap                        uvm_analysis_port                   -     @894   
+#           put_export                    uvm_put_imp                         -     @878   
+#         rxbyte_outfifo                  uvm_tlm_analysis_fifo #(T)          -     @918   
+#           analysis_export               uvm_analysis_imp                    -     @957   
+#           get_ap                        uvm_analysis_port                   -     @949   
+#           get_peek_export               uvm_get_peek_imp                    -     @933   
+#           put_ap                        uvm_analysis_port                   -     @941   
+#           put_export                    uvm_put_imp                         -     @925   
+#       prd                               spi_sb_predictor_c                  -     @731   
+#         spi_cont_imp                    uvm_analysis_imp_spi_cont           -     @973   
+#         spi_master_imp                  uvm_analysis_imp_spi_m              -     @965   
+#         spi_master_predicted_mosi_ap    uvm_analysis_port                   -     @981   
+#         spi_master_predicted_rxbyte_ap  uvm_analysis_port                   -     @989   
+#     m_spi_controller_agent              spi_controller_agent_c              -     @553   
+#       m_driver                          spi_controller_driver_c             -     @1114  
+#         rsp_port                        uvm_analysis_port                   -     @1129  
+#         seq_item_port                   uvm_seq_item_pull_port              -     @1121  
+#       m_monitor                         spi_controller_monitor_c            -     @998   
+#         spi_controller_mon_inp_ap       uvm_analysis_port                   -     @1155  
+#         spi_controller_mon_out_ap       uvm_analysis_port                   -     @1163  
+#       m_seqr                            spi_controller_agent_seqr_c         -     @1005  
+#         rsp_export                      uvm_analysis_export                 -     @1012  
+#         seq_item_export                 uvm_seq_item_pull_imp               -     @1106  
+#         arbitration_queue               array                               0     -      
+#         lock_queue                      array                               0     -      
+#         num_last_reqs                   integral                            32    'd1    
+#         num_last_rsps                   integral                            32    'd1    
+#       spi_controller_agent_inp_ap       uvm_analysis_port                   -     @1137  
+#       spi_controller_agent_out_ap       uvm_analysis_port                   -     @1145  
+#     m_spi_master_agent                  spi_master_agent_c                  -     @546   
+#       m_driver                          spi_master_driver_c                 -     @1293  
+#         rsp_port                        uvm_analysis_port                   -     @1308  
+#         seq_item_port                   uvm_seq_item_pull_port              -     @1300  
+#       m_monitor                         spi_master_monitor_c                -     @1177  
+#         spi_master_mon_inp_ap           uvm_analysis_port                   -     @1334  
+#         spi_master_mon_out_ap           uvm_analysis_port                   -     @1342  
+#       m_seqr                            spi_master_agent_seqr_c             -     @1184  
+#         rsp_export                      uvm_analysis_export                 -     @1191  
+#         seq_item_export                 uvm_seq_item_pull_imp               -     @1285  
+#         arbitration_queue               array                               0     -      
+#         lock_queue                      array                               0     -      
+#         num_last_reqs                   integral                            32    'd1    
+#         num_last_rsps                   integral                            32    'd1    
+#       spi_master_agent_inp_ap           uvm_analysis_port                   -     @1316  
+#       spi_master_agent_out_ap           uvm_analysis_port                   -     @1324  
+#     m_vseqr                             spi_vsequencer_c                    -     @560   
+#       rsp_export                        uvm_analysis_export                 -     @567   
+#       seq_item_export                   uvm_seq_item_pull_imp               -     @661   
+#       arbitration_queue                 array                               0     -      
+#       lock_queue                        array                               0     -      
+#       num_last_reqs                     integral                            32    'd1    
+#       num_last_rsps                     integral                            32    'd1    
+# -----------------------------------------------------------------------------------------
+# 
+#### Factory Configuration (*)
+# 
+#   No instance or type overrides are registered with this factory
+# 
+# All types registered with the factory: 68 total
+# (types without type names will not be printed)
+# 
+#   Type Name
+#   ---------
+#   active_reset_test_c
+#   idle_reset_test_c
+#   questa_uvm_recorder
+#   rst_driver_c
+#   spi_base_seq_c
+#   spi_base_test_c
+#   spi_base_vseq_c
+#   spi_controller_agent_c
+#   spi_controller_agent_cfg_c
+#   spi_controller_agent_seqr_c
+#   spi_controller_and_master_test_c
+#   spi_controller_driver_c
+#   spi_controller_monitor_c
+#   spi_controller_only_test_c
+#   spi_controller_only_vseq_c
+#   spi_coverage_c
+#   spi_env_c
+#   spi_env_cfg_c
+#   spi_general_seq_c
+#   spi_gnrl_constr_seq_c
+#   spi_item_c
+#   spi_master_agent_c
+#   spi_master_agent_cfg_c
+#   spi_master_agent_seqr_c
+#   spi_master_driver_c
+#   spi_master_monitor_c
+#   spi_master_only_vseq_c
+#   spi_sb_comparator_c
+#   spi_sb_predictor_c
+#   spi_scoreboard_c
+#   spi_vsequencer_c
+# (*) Types with no associated type name will be printed as <unknown>
+# 
+####
+# 
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/test_lib//spi_controller_only_test_c.svh(29) @ 0: uvm_test_top [uvm_test_top] Starting test
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/test_lib//spi_controller_only_test_c.svh(31) @ 0: uvm_test_top [uvm_test_top] Executing vseq
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/rst_driver_c.svh(39) @ 0: uvm_test_top.m_rst_drv [rst] Going down.
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/rst_driver_c.svh(43) @ 72012: uvm_test_top.m_rst_drv [rst] Going up.
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/test_lib//spi_controller_only_test_c.svh(33) @ 21955000: uvm_test_top [uvm_test_top] vseq complete
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/test_lib//spi_controller_only_test_c.svh(36) @ 22955000: uvm_test_top [uvm_test_top] Ending test
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 22955000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_checkers/spi_sb_comparator_c.svh(156) @ 22955000: uvm_test_top.m_spi_env.m_scoreboard.cmp [spi_sb_comparator_c] 
+# 
+# 
+# *** TEST PASSED - txbyte vs mosi - 61 vectors ran, 61 vectors passed ***
+# 
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_checkers/spi_sb_comparator_c.svh(164) @ 22955000: uvm_test_top.m_spi_env.m_scoreboard.cmp [spi_sb_comparator_c] 
+# 
+# 
+# *** TEST PASSED - miso vs rxbyte - 61 vectors ran, 61 vectors passed ***
+# 
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   12
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [rst]     2
+# [spi_sb_comparator_c]     2
+# [uvm_test_top]     4
+# ** Note: $finish    : C:/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 22955 ns  Iteration: 54  Instance: /spi_tb_top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at C:/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430

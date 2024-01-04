@@ -18,42 +18,30 @@ vlog -f scripts/tb.f
 #***************************************************#
 # Optimizing Design with vopt
 #***************************************************#
-vopt spi_tb_top -o top_opt -debugdb  +acc +cover=sbecf
+vopt spi_tb_top  -o top_opt    -debugdb      +acc        +cover=sbecf
 
 #***************************************************#
 # Simulation of Tests
 #***************************************************#
 
-#********************************** RUN A TEST ***********************************#
-transcript file log/spi_controller_only_test_c.log
-vsim top_opt -c -assertdebug -debugDB -fsmdebug -coverage +UVM_TESTNAME=spi_controller_only_test_c
-set NoQuitOnFinish 1
-onbreak {resume}
-log /* -r
-run -all
-coverage attribute -name TESTNAME -value spi_controller_only_test_c
-coverage save coverage/spi_controller_only_test_c.ucdb
+#********************************** RUN TEST ***********************************#
+do    scripts/spi_controller_only_test.do
 #*********************************************************************************#
 
-#***************************************************#
-# Close the Transcript file
-#***************************************************#
-transcript file ()
 
-#***************************************************#
-# draw the dut pins in waveforms
-#***************************************************#
-do waves.do
 
 #***************************************************#
 # save the coverage in text files
 #***************************************************#
 vcover merge  coverage/spi_cov.ucdb \
-              coverage/spi_controller_only_test_c.ucdb   
-              
-              
-vcover report coverage/spi_cov.ucdb  -cvg      -details    -output   coverage/fun_coverage.txt
-vcover report coverage/spi_cov.ucdb  -details  -assert     -output   coverage/assertions.txt
-vcover report coverage/spi_cov.ucdb                        -output   coverage/code_coverage.txt
+              coverage/spi_controller_only_test_c.ucdb   \
+              coverage/spi_controller_and_master_test_c.ucdb  
 
-#quit -sim
+# can use instance=/tb/dut/* to cover all dut's instances
+
+vcover report coverage/spi_cov.ucdb  -cvg      -details                                 -output   coverage/fun_coverage.txt
+vcover report coverage/spi_cov.ucdb  -details  -assert                                  -output   coverage/assertions.txt
+vcover report coverage/spi_cov.ucdb  -instance=/spi_tb_top/spi_master_dut               -output   coverage/code_coverage.txt
+vcover report coverage/spi_cov.ucdb  -instance=/spi_tb_top/spi_master_dut  -details     -output   coverage/code_coverage_details.txt
+
+quit -sim

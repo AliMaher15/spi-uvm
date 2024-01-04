@@ -1,92 +1,82 @@
 # QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 00:05:04 on Jan 02,2024
+# Start time: 20:47:54 on Jan 04,2024
 # vlog -reportprogress 300 -f scripts/dut.f 
-# -- Compiling module axis_m
-# -- Compiling module axis_s
+# -- Compiling module SPI_Master
 # 
 # Top level modules:
-# 	axis_m
-# 	axis_s
-# End time: 00:05:04 on Jan 02,2024, Elapsed time: 0:00:00
+# 	SPI_Master
+# End time: 20:47:55 on Jan 04,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 00:05:04 on Jan 02,2024
+# Start time: 20:47:55 on Jan 04,2024
 # vlog -reportprogress 300 -f scripts/tb.f 
 # -- Compiling interface rst_intf
-# -- Compiling package axi_global_params_pkg
-# -- Compiling package axi_item_pkg
+# -- Compiling package spi_global_params_pkg
+# -- Compiling package spi_item_pkg
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
-# ** Note: (vlog-2286) D:/Ali/Courses/Verification-Projects/AXI-uvm/tb/axi_item/axi_item_pkg.sv(4): Using implicit +incdir+C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
-# -- Importing package axi_global_params_pkg
-# -- Compiling package axi_master_agent_pkg
-# -- Importing package axi_item_pkg
-# -- Compiling interface axi_master_intf
-# -- Compiling package axi_slave_agent_pkg
-# -- Compiling interface axi_slave_intf
-# -- Compiling package axi_usertypes_pkg
-# -- Importing package axi_master_agent_pkg
-# -- Importing package axi_slave_agent_pkg
-# -- Compiling package axi_tb_pkg
-# -- Importing package axi_usertypes_pkg
-# -- Compiling package axi_seq_pkg
-# -- Importing package axi_tb_pkg
-# -- Compiling package axi_test_pkg
-# -- Importing package axi_seq_pkg
-# -- Compiling module axi_tb_top
-# -- Importing package axi_test_pkg
+# ** Note: (vlog-2286) D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_item/spi_item_pkg.sv(4): Using implicit +incdir+C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling package spi_master_agent_pkg
+# -- Importing package spi_item_pkg
+# -- Compiling interface spi_master_intf
+# -- Compiling package spi_controller_agent_pkg
+# -- Compiling interface spi_controller_intf
+# -- Compiling package spi_tb_pkg
+# -- Importing package spi_master_agent_pkg
+# -- Importing package spi_controller_agent_pkg
+# -- Importing package spi_global_params_pkg
+# -- Compiling package spi_seq_pkg
+# -- Importing package spi_tb_pkg
+# -- Compiling package spi_test_pkg
+# -- Importing package spi_seq_pkg
+# -- Compiling module spi_tb_top
+# -- Importing package spi_test_pkg
 # 
 # Top level modules:
-# 	axi_tb_top
-# End time: 00:05:05 on Jan 02,2024, Elapsed time: 0:00:01
+# 	spi_tb_top
+# End time: 20:47:56 on Jan 04,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 00:05:05 on Jan 02,2024
-# vopt -reportprogress 300 axi_tb_top -o top_opt -debugdb "+acc" "+cover=sbecf" 
+# Start time: 20:47:56 on Jan 04,2024
+# vopt -reportprogress 300 spi_tb_top -o top_opt -debugdb "+acc" "+cover=sbecf+/spi_tb_top/spi_master_dut" "+nocover=sbceft+/spi_test_pkg+/spi_seq_pkg+/spi_master_agent_pkg+/spi_controller_agent_pkg" 
 # 
 # Top level modules:
-# 	axi_tb_top
+# 	spi_tb_top
 # 
 # Analyzing design...
-# -- Loading module axi_tb_top
+# -- Loading module spi_tb_top
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
-# -- Importing package axi_global_params_pkg
-# -- Importing package axi_usertypes_pkg
-# -- Importing package axi_master_agent_pkg
-# -- Importing package axi_item_pkg
-# -- Importing package axi_slave_agent_pkg
-# -- Importing package axi_tb_pkg
-# -- Importing package axi_seq_pkg
-# -- Importing package axi_test_pkg
+# -- Importing package spi_global_params_pkg
+# -- Importing package spi_tb_pkg
+# -- Importing package spi_item_pkg
+# -- Importing package spi_master_agent_pkg
+# -- Importing package spi_controller_agent_pkg
+# -- Importing package spi_seq_pkg
+# -- Importing package spi_test_pkg
 # -- Loading package mtiUvm.questa_uvm_pkg
-# -- Loading interface axi_master_intf
-# -- Loading interface axi_slave_intf
+# -- Loading interface spi_master_intf
+# -- Loading interface spi_controller_intf
 # -- Loading interface rst_intf
-# -- Loading module axis_m
-# -- Loading module axis_s
-# ** Warning: (vopt-13408) Code coverage will be disabled for some DUs/packages/classes and source files.
-# Optimizing 19 design-units (inlining 0/6 module instances):
+# -- Loading module SPI_Master
+# Optimizing 17 design-units (inlining 0/5 module instances):
 # -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
 # -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
-# -- Optimizing package axi_global_params_pkg(fast)
-# -- Optimizing package axi_item_pkg(fast)
-# -- Optimizing package axi_master_agent_pkg(fast)
-# -- Optimizing package axi_slave_agent_pkg(fast)
-# -- Optimizing package axi_usertypes_pkg(fast)
-# -- Optimizing package axi_tb_pkg(fast)
-# -- Optimizing package axi_seq_pkg(fast)
-# -- Optimizing package axi_test_pkg(fast)
-# -- Optimizing module axis_m(fast)
-# -- Processing module axis_m(fast) for debug
-# -- Optimizing module axi_tb_top(fast)
-# -- Processing module axi_tb_top(fast) for debug
-# -- Optimizing module axis_s(fast)
-# -- Processing module axis_s(fast) for debug
-# -- Optimizing interface axi_slave_intf(fast__2)
-# -- Optimizing interface axi_master_intf(fast__2)
+# -- Optimizing package spi_global_params_pkg(fast)
+# -- Optimizing package spi_item_pkg(fast)
+# -- Optimizing package spi_master_agent_pkg(fast)
+# -- Optimizing package spi_controller_agent_pkg(fast)
+# -- Optimizing package spi_tb_pkg(fast)
+# -- Optimizing package spi_seq_pkg(fast)
+# -- Optimizing package spi_test_pkg(fast)
+# -- Optimizing module SPI_Master(fast)
+# -- Processing module SPI_Master(fast) for debug
+# -- Optimizing module spi_tb_top(fast)
+# -- Processing module spi_tb_top(fast) for debug
+# -- Optimizing interface spi_controller_intf(fast__2)
+# -- Optimizing interface spi_master_intf(fast__2)
 # -- Optimizing interface rst_intf(fast__2)
 # -- Optimizing interface rst_intf(fast)
-# -- Optimizing interface axi_slave_intf(fast)
-# -- Optimizing interface axi_master_intf(fast)
+# -- Optimizing interface spi_controller_intf(fast)
+# -- Optimizing interface spi_master_intf(fast)
 # Optimized design name is top_opt
-# End time: 00:05:09 on Jan 02,2024, Elapsed time: 0:00:04
-# Errors: 0, Warnings: 1
+# End time: 20:48:02 on Jan 04,2024, Elapsed time: 0:00:06
+# Errors: 0, Warnings: 0

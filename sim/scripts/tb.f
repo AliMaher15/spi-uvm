@@ -9,8 +9,8 @@ D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_item/spi_item_pkg.sv
 D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_master_agent/spi_master_agent_pkg.sv
 D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_master_agent/spi_master_intf.sv
 
-D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/axi_slave_agent/spi_controller_agent_pkg.sv
-D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/axi_slave_agent/spi_controller_intf.sv
+D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_controller_agent/spi_controller_agent_pkg.sv
+D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_controller_agent/spi_controller_intf.sv
 
 
 D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_tb_pkg.sv
