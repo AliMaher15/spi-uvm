@@ -12,16 +12,16 @@ logic             i_TX_DV;          // Data Valid Pulse with i_TX_Byte
 logic             o_TX_Ready;       // [MASTER] Transmit Ready for next byte
 
 // RX (MISO) Signals
-logic             o_RX_DV,           // Data Valid pulse (1 clock cycle)
-logic    [7:0]    o_RX_Byte,         // [MASTER] Byte received on MISO  || [SLAVE] Byte recieved on MOSI
+logic             o_RX_DV;           // Data Valid pulse (1 clock cycle)
+logic    [7:0]    o_RX_Byte;         // [MASTER] Byte received on MISO  || [SLAVE] Byte recieved on MOSI
 
 
 //********* MACROS FUNCTIONS ***********//
 `define spi_cont_assert_clk(arg) \
-  assert property (@(posedge CLK) disable iff (!RST) arg);
+  assert property (@(posedge i_Clk) disable iff (!i_Rst_L) arg);
 
 `define spi_cont_assert_async_rst(arg) \
-  assert property (@(negedge RST) 1'b1 |=> @(posedge CLK) arg);
+  assert property (@(negedge i_Rst_L) 1'b1 |=> @(posedge i_Clk) arg);
 
 
 Assert_spi_cont_rst_check :

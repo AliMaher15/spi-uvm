@@ -31,7 +31,7 @@ class spi_base_test_c extends  uvm_test;
     // Task:     configure_phase
     extern virtual task configure_phase(uvm_phase phase);
     // Function: set_seqs
-    extern virtual function void set_seqs(axi_vseq_base_c seq);
+    extern virtual function void set_seqs(spi_base_vseq_c seq);
     // Function: start_of_simulation_phase
     extern virtual function void start_of_simulation_phase(uvm_phase phase);
  
@@ -42,9 +42,9 @@ endclass : spi_base_test_c
 // Function: build_phase
 function void spi_base_test_c::build_phase(uvm_phase phase);
   // Create configuration objects
-  m_spi_env_cfg               = spi_env_cfg_c             ::type_id::create("m_axi_env_cfg");
-  m_spi_master_agent_cfg      = spi_master_agent_cfg_c    ::type_id::create("m_axi_master_agent_cfg");
-  m_spi_controller_agent_cfg  = spi_controller_agent_cfg_c::type_id::create("m_axi_controller_agent_cfg");
+  m_spi_env_cfg               = spi_env_cfg_c             ::type_id::create("m_spi_env_cfg");
+  m_spi_master_agent_cfg      = spi_master_agent_cfg_c    ::type_id::create("m_spi_master_agent_cfg");
+  m_spi_controller_agent_cfg  = spi_controller_agent_cfg_c::type_id::create("m_spi_controller_agent_cfg");
 
   // get interfaces
   if(!uvm_config_db #(virtual spi_master_if)    ::get(this, "","SPI_MASTER_IF",  m_spi_master_agent_cfg.vif))
@@ -58,8 +58,8 @@ function void spi_base_test_c::build_phase(uvm_phase phase);
   m_spi_controller_agent_cfg.active  = UVM_ACTIVE;
 
   // connect configurations
-  m_spi_env_cfg.m_axi_master_agent_cfg     = m_spi_master_agent_cfg;
-  m_spi_env_cfg.m_axi_controller_agent_cfg = m_spi_controller_agent_cfg;
+  m_spi_env_cfg.m_spi_master_agent_cfg     = m_spi_master_agent_cfg;
+  m_spi_env_cfg.m_spi_controller_agent_cfg = m_spi_controller_agent_cfg;
 
   // set environment configuration
   uvm_config_db #(spi_env_cfg_c)::set(this, "*", "m_spi_env_cfg", m_spi_env_cfg);
@@ -85,7 +85,7 @@ endtask : configure_phase
 
 // Function: set_seqs
 // set the environment configuration handle inside virtual sequence to this test's env config handle
-function void spi_base_test_c::set_seqs(spi_vseq_base_c seq);
+function void spi_base_test_c::set_seqs(spi_base_vseq_c seq);
   seq.m_cfg = m_spi_env_cfg;
 endfunction
 

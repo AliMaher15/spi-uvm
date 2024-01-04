@@ -4,7 +4,7 @@ class spi_controller_monitor_c extends uvm_monitor;
 
     // Interface and Config handles
     //
-	  virtual    spi_master_intf      vif;
+	  virtual    spi_controller_intf      vif;
 	  spi_controller_agent_cfg_c          m_cfg;
 
     // Analysis Ports
@@ -76,9 +76,9 @@ task spi_controller_monitor_c::input_monitor_run();
     forever begin
       // if TX_DV is High and master is ready, then it is a usefull input to write
       @(posedge vif.i_Clk);
-      if (i_TX_DV && o_TX_Ready) begin
+      if (vif.i_TX_DV && vif.o_TX_Ready) begin
         spi_item_c    spi_controller_inp_item = spi_item_c::type_id::create("spi_controller_inp_item");
-        spi_master_inp_item.rst_op = 0;
+        spi_controller_inp_item.rst_op = 0;
         spi_controller_inp_item.i_TX_Byte = vif.i_TX_Byte;
         spi_controller_mon_inp_ap.write(spi_controller_inp_item);
       end

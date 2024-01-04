@@ -17,7 +17,7 @@ bit clk;
 rst_intf rst_i ();
 
 spi_master_intf            SPI_MASTER_IF (.i_Clk(clk), .i_Rst_L(rst_i.res_n));
-spi_controller_intf        SPI_CONT_IF   (.i_Clk(clk), .i_Rst_L(rst_i.res_n))
+spi_controller_intf        SPI_CONT_IF   (.i_Clk(clk), .i_Rst_L(rst_i.res_n));
 //***************************************************//
 
 //**************** DUT INSTANTS *********************//

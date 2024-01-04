@@ -39,8 +39,8 @@ function void spi_env_c::build_phase(uvm_phase phase);
         `uvm_fatal(get_full_name(), "Failed to get env_cfg from database")
 
     // path configuration to agents
-    uvm_config_db#(spi_master_agent_cfg_c)    ::set(this, "m_axi_master_agent*"    , "spi_master_agent_cfg"    , m_cfg.m_spi_master_agent_cfg);
-    uvm_config_db#(spi_controller_agent_cfg_c)::set(this, "m_axi_controller_agent*", "spi_controller_agent_cfg", m_cfg.m_spi_controller_agent_cfg);
+    uvm_config_db#(spi_master_agent_cfg_c)    ::set(this, "m_spi_master_agent*"    , "spi_master_agent_cfg"    , m_cfg.m_spi_master_agent_cfg);
+    uvm_config_db#(spi_controller_agent_cfg_c)::set(this, "m_spi_controller_agent*", "spi_controller_agent_cfg", m_cfg.m_spi_controller_agent_cfg);
     
     // create objects
     m_spi_master_agent     = spi_master_agent_c    ::type_id::create("m_spi_master_agent",this);
@@ -57,18 +57,18 @@ function void spi_env_c::connect_phase(uvm_phase phase);
     super.connect_phase(phase);
 
     // connect the virtual sequencer with the agent sequencer
-    m_vseqr.m_axi_master_agent_seqr      = m_axi_master_agent    .m_seqr;
-    m_vseqr.m_axi_controller_agent_seqr  = m_axi_controller_agent.m_seqr;
+    m_vseqr.m_spi_master_agent_seqr      = m_spi_master_agent    .m_seqr;
+    m_vseqr.m_spi_controller_agent_seqr  = m_spi_controller_agent.m_seqr;
 
     // Connect Coverage
-    m_axi_master_agent    .spi_master_agent_inp_ap    .connect(m_coverage.spi_master_mon_in_imp);
-    m_axi_controller_agent.spi_controller_agent_inp_ap.connect(m_coverage.spi_cont_mon_in_imp);
+    m_spi_master_agent    .spi_master_agent_inp_ap    .connect(m_coverage.spi_master_mon_in_imp);
+    m_spi_controller_agent.spi_controller_agent_inp_ap.connect(m_coverage.spi_cont_mon_in_imp);
     
     // Connect Scoreboard
-    m_axi_master_agent    .spi_master_agent_inp_ap    .connect(m_scoreboard.axp_miso_in);
-    m_axi_master_agent    .spi_master_agent_out_ap    .connect(m_scoreboard.axp_mosi_out);
+    m_spi_master_agent    .spi_master_agent_inp_ap    .connect(m_scoreboard.axp_miso_in);
+    m_spi_master_agent    .spi_master_agent_out_ap    .connect(m_scoreboard.axp_mosi_out);
 
-    m_axi_controller_agent.spi_controller_agent_inp_ap.connect(m_scoreboard.axp_txbyte_in);
-    m_axi_controller_agent.spi_controller_agent_out_ap.connect(m_scoreboard.axp_rxbyte_out);
+    m_spi_controller_agent.spi_controller_agent_inp_ap.connect(m_scoreboard.axp_txbyte_in);
+    m_spi_controller_agent.spi_controller_agent_out_ap.connect(m_scoreboard.axp_rxbyte_out);
     
 endfunction: connect_phase

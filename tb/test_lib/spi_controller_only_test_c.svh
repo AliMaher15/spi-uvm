@@ -2,7 +2,7 @@
 //
 // run spi_controller_only_vseq_c
 class spi_controller_only_test_c extends  spi_base_test_c;
-    `uvm_component_utils(spi_test_c)
+    `uvm_component_utils(spi_controller_only_test_c)
     
    // Constructor
    function new(string name, uvm_component parent);
@@ -16,7 +16,7 @@ class spi_controller_only_test_c extends  spi_base_test_c;
 
 
 // Task: run_phase
-task spi_test_c::run_phase(uvm_phase phase);
+task spi_controller_only_test_c::run_phase(uvm_phase phase);
 
   //vseq_class_name              vseq_handle   = seq_class_name     ::type_id       ::create("vseq_handle");
   spi_controller_only_vseq_c     m_spi_vseq = spi_controller_only_vseq_c::type_id::create("m_spi_vseq");

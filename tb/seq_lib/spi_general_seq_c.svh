@@ -2,7 +2,7 @@
 //
 // generate a fully random spi_item
 class spi_general_seq_c extends spi_base_seq_c;
-    `uvm_object_utils(spi_seq_c);
+    `uvm_object_utils(spi_general_seq_c);
 
     // Item handle
     spi_item_c       m_item;

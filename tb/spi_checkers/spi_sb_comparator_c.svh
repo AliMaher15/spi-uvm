@@ -49,7 +49,10 @@ class spi_sb_comparator_c extends uvm_component;
     extern task run_phase(uvm_phase phase);
     // Function: report_phase
     extern function void report_phase(uvm_phase phase); 
-
+    // Function: PASS
+    extern function void PASS(); 
+    // Function: ERROR
+    extern function void ERROR(); 
     
 endclass : spi_sb_comparator_c
 
@@ -141,14 +144,14 @@ endfunction: report_phase
 
 
 // Function: PASS
-function void PASS(); 
+function void spi_sb_comparator_c::PASS(); 
     VECT_CNT++;
     PASS_CNT++;
 endfunction: PASS
 
 
 // Function: ERROR
-function void ERROR();
+function void spi_sb_comparator_c::ERROR();
     VECT_CNT++;
     ERROR_CNT++;
 endfunction: ERROR

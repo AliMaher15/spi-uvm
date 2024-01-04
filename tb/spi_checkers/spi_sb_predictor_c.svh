@@ -3,7 +3,7 @@
 // read MISO    (spi master interface side)   -> predict RX_Byte (controller side)
 // read TX_Byte (controller side)             -> predict MOSI    (spi master interface side)
 class spi_sb_predictor_c extends uvm_component;
-    `uvm_component_utils(spi_master_sb_predictor_c);
+    `uvm_component_utils(spi_sb_predictor_c);
 
     // Analysis Implementations
     //
@@ -32,14 +32,14 @@ class spi_sb_predictor_c extends uvm_component;
     // Class Methods
     //
     // Subscriber Implimintation Functions
-    extern function void write_spi_m(input spi_item_c t);
-    extern function void write_spi_cont(input spi_item_c t);
+    extern   function    void          write_spi_m     (input spi_item_c t);
+    extern   function    void          write_spi_cont  (input spi_item_c t);
     // Function: mosi_predictor
-    extern function void mosi_predictor(input spi_item_c t);
+    extern   function    spi_item_c    mosi_predictor  (input spi_item_c t);
     // Function: rxbyte_predictor
-    extern function void rxbyte_predictor(input spi_item_c t);
+    extern   function    spi_item_c    rxbyte_predictor(input spi_item_c t);
     // Function: build_phase
-    extern function void build_phase(uvm_phase phase);
+    extern   function    void          build_phase(uvm_phase phase);
     
 endclass: spi_sb_predictor_c
 
