@@ -81,6 +81,7 @@ task spi_master_driver_c::run_driver();
             @(posedge vif.o_SPI_Clk);  // from my understanding, this clock is always low in IDLE unless there is transmission
             vif.i_SPI_MISO <= m_item.data_to_serialize[i];
         end
+        
         // finished, next!!
         //****************************************************************//
         seq_item_port.item_done();
