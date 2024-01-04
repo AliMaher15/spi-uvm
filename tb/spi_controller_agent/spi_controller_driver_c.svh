@@ -76,16 +76,15 @@ task spi_controller_driver_c::run_driver();
     forever begin
         seq_item_port.get_next_item(m_item);
         //****************************************************************//
+        // wait for the master to be ready to recieve a new byte (a blocking if condition)
+        wait(vif.o_TX_Ready);
+        // User control
+        // set i_TX_Byte & i_TX_DV
+        vif.i_TX_Byte <= m_item.i_TX_Byte;
         while (m_item.delay > 0) begin
             @(posedge vif.i_Clk);
             m_item.delay--;
         end
-        // User control
-        // set i_TX_Byte & i_TX_DV
-        @(posedge vif.i_Clk);
-        vif.i_TX_Byte <= m_item.i_TX_Byte;
-        // wait for the master to be ready to recieve a new byte (a blocking if condition)
-        wait(vif.o_TX_Ready);
         vif.i_TX_DV   <= 1;
         @(posedge vif.i_Clk);
         vif.i_TX_DV   <= 0; // data valid is only up for 1 clock cycle

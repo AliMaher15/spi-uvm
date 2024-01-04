@@ -15,7 +15,7 @@ class rst_driver_c extends uvm_driver;
    `uvm_component_utils_end
 
    // Base constraints
-   constraint rst_cnstr { reset_time_ps inside {[1:100000]}; }
+   constraint rst_cnstr { reset_time_ps inside {[10000:100000]}; }
 
    // var: rst_vi
    // Reset virtual interface

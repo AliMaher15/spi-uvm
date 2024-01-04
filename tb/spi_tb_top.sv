@@ -1,8 +1,10 @@
 // Module: spi_tb_top
 // 
 // note: spi_slave and modes aren't tested, mode is fixed at 1
+
+`timescale 1ns/1ps
+
 module spi_tb_top();
-    `timescale 1ns/1ps
 
 import uvm_pkg::*;
 `include "uvm_macros.svh"
@@ -21,11 +23,11 @@ spi_controller_intf        SPI_CONT_IF   (.i_Clk(clk), .i_Rst_L(rst_i.res_n));
 //***************************************************//
 
 //**************** DUT INSTANTS *********************//
-SPI_Master #(.SPI_MODE(1) 
-            )
+SPI_Master #(.SPI_MODE(1),
+             .CLKS_PER_HALF_BIT(2)) // 100 MHz
 spi_master_dut (
-     .i_Rst_L(clk),
-     .i_Clk(rst_i.res_n),
+     .i_Rst_L(rst_i.res_n),
+     .i_Clk(clk),
      // TX (MOSI) Signals
      .i_TX_Byte(SPI_CONT_IF.i_TX_Byte),
      .i_TX_DV(SPI_CONT_IF.i_TX_DV),

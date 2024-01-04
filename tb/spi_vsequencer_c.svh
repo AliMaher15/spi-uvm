@@ -7,8 +7,8 @@ class spi_vsequencer_c extends uvm_sequencer;
     `uvm_component_utils(spi_vsequencer_c)
 
     // contains the following sequencers
-    spi_master_agent_seqr_c       m_spi_master_agent_seqr;
-    spi_controller_agent_c        m_spi_controller_agent_seqr;
+    spi_master_agent_seqr_c            m_spi_master_agent_seqr;
+    spi_controller_agent_seqr_c        m_spi_controller_agent_seqr;
     // env config
     spi_env_cfg_c                 m_cfg;
     

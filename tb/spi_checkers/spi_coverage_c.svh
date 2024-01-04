@@ -17,19 +17,13 @@ class spi_coverage_c extends uvm_component;
     spi_item_c   spi_cont_item;
 
 
-    covergroup spi_byte_cg;
+    // Cover Groups
+    //
+    // Covergroup: spi_cont_cg
+    // check the stimulus on controller/user interface
+    covergroup spi_cont_cg;
 
-        user_byte_cp: coverpoint spi_master_item.i_TX_Byte {
-            bins all_zeros              = {'h00};
-            bins all_ones               = {'hFF};
-            bins one_zero_switch        = {8'b10101010, 8'b01010101};
-            bins all_ones_to_all_zeros  = ('hFF => 'h00);
-            bins all_zeros_to_all_ones  = ('h00 => 'hFF);
-            bins back_to_back_all_zeros = ('h00 [*2]);
-            bins back_to_back_all_ones  = ('hFF [*2]);
-        }
-
-        if_serialized_byte_cp: coverpoint spi_cont_item.SPI_MISO {
+        TX_Byte_cp: coverpoint spi_cont_item.i_TX_Byte {
             bins all_zeros              = {'h00};
             bins all_ones               = {'hFF};
             bins one_zero_switch        = {8'b10101010, 8'b01010101};
@@ -39,13 +33,29 @@ class spi_coverage_c extends uvm_component;
             bins back_to_back_all_ones  = ('hFF [*2]);
         }
         
-    endgroup: spi_byte_cg
+    endgroup: spi_cont_cg
+    // Covergroup: spi_mast_cg
+    // check the stimulus on master interface
+    covergroup spi_mast_cg;
+
+        SPI_MISO_cp: coverpoint spi_master_item.SPI_MISO {
+            bins all_zeros              = {'h00};
+            bins all_ones               = {'hFF};
+            bins one_zero_switch        = {8'b10101010, 8'b01010101};
+            bins all_ones_to_all_zeros  = ('hFF => 'h00);
+            bins all_zeros_to_all_ones  = ('h00 => 'hFF);
+            bins back_to_back_all_zeros = ('h00 [*2]);
+            bins back_to_back_all_ones  = ('hFF [*2]);
+        }
+
+    endgroup: spi_mast_cg
 
     
     // Constructor: new
     function new(string name, uvm_component parent);
         super.new(name, parent);
-        spi_byte_cg = new();
+        spi_cont_cg = new();
+        spi_mast_cg = new();
     endfunction
 
 
@@ -74,7 +84,7 @@ function void spi_coverage_c::write_spi_master_mon_in(input spi_item_c t);
     if (!t.rst_op) begin
         spi_master_item = spi_item_c::type_id::create("spi_master_item");
         spi_master_item.copy(t);
-        spi_byte_cg.sample();
+        spi_mast_cg.sample();
     end 
 endfunction : write_spi_master_mon_in
 
@@ -83,7 +93,8 @@ endfunction : write_spi_master_mon_in
 function void spi_coverage_c::write_spi_cont_mon_in(input spi_item_c t);
     if (!t.rst_op) begin
         spi_cont_item = spi_item_c::type_id::create("spi_cont_item");
-        spi_cont_item.copy(t);
-        spi_byte_cg.sample();
+        //spi_cont_item.copy(t);
+        spi_cont_item.i_TX_Byte = t.i_TX_Byte;
+        spi_cont_cg.sample();
     end
 endfunction : write_spi_cont_mon_in

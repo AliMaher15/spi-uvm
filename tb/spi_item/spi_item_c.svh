@@ -22,8 +22,8 @@ class spi_item_c extends uvm_sequence_item;
 
     // uvm automation macros (create automated methods as copy, print,.. etc)
     `uvm_object_utils_begin(spi_item_c)
-        `uvm_field_int(i_TX_Byte        , UVM_DEFAULT | UVM_DEC)
-        `uvm_field_int(o_RX_Byte        , UVM_DEFAULT | UVM_DEC)
+        `uvm_field_int(i_TX_Byte        , UVM_DEFAULT | UVM_BIN)
+        `uvm_field_int(o_RX_Byte        , UVM_DEFAULT | UVM_BIN)
         `uvm_field_int(SPI_MOSI         , UVM_DEFAULT | UVM_BIN)
         `uvm_field_int(SPI_MISO         , UVM_DEFAULT | UVM_BIN)
         `uvm_field_int(data_to_serialize, UVM_DEFAULT | UVM_BIN)

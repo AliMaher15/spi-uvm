@@ -76,7 +76,7 @@ task spi_controller_monitor_c::input_monitor_run();
     forever begin
       // if TX_DV is High and master is ready, then it is a usefull input to write
       @(posedge vif.i_Clk);
-      if (vif.i_TX_DV && vif.o_TX_Ready) begin
+      if (vif.i_TX_DV & vif.o_TX_Ready) begin
         spi_item_c    spi_controller_inp_item = spi_item_c::type_id::create("spi_controller_inp_item");
         spi_controller_inp_item.rst_op = 0;
         spi_controller_inp_item.i_TX_Byte = vif.i_TX_Byte;
@@ -100,7 +100,7 @@ task spi_controller_monitor_c::output_monitor_run();
       spi_item_c      spi_controller_out_item = spi_item_c::type_id::create("spi_controller_out_item");
       spi_controller_out_item.rst_op = 0;
       spi_controller_out_item.o_RX_Byte = vif.o_RX_Byte;
-      spi_controller_mon_inp_ap.write(spi_controller_out_item);
+      spi_controller_mon_out_ap.write(spi_controller_out_item);
     end 
   end
 endtask: output_monitor_run
