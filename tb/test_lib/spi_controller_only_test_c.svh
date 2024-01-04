@@ -31,7 +31,7 @@ task spi_controller_only_test_c::run_phase(uvm_phase phase);
     `uvm_info(get_full_name(),"Executing vseq", UVM_LOW)      
     m_spi_vseq.start(m_spi_env.m_vseqr) ;        
     `uvm_info(get_full_name(), "vseq complete", UVM_LOW) 
-    #1000ns
+    #1000ns;
 
     `uvm_info(get_full_name(),"Ending test", UVM_LOW)
   

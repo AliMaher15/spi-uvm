@@ -98,7 +98,7 @@ task spi_master_monitor_c::output_monitor_run();
     spi_master_out_item.rst_op = 0;
 
     // monitor the MOSI serialization (MSB first)
-    for (int i=7; i>0; --i) begin
+    for (int i=7; i>=0; --i) begin
       @(posedge vif.o_SPI_Clk)
       spi_master_out_item.SPI_MOSI[i] = vif.o_SPI_MOSI;
     end
