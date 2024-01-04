@@ -14,7 +14,15 @@ package spi_test_pkg;
     `include "spi_base_test_c.svh"
 
     `include "spi_controller_only_vseq_c.svh"
+    `include "spi_master_only_vseq_c.svh"
+
+
+
+
     `include "spi_controller_only_test_c.svh"
+    `include "spi_controller_and_master_test_c.svh"
+
+
 
     `include "idle_reset_test_c.svh"
     `include "active_reset_test_c.svh"

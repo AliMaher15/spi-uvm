@@ -9,6 +9,7 @@ package spi_seq_pkg ;
 
     `include "spi_base_seq_c.svh"  
     `include "spi_general_seq_c.svh"
+    `include "spi_gnrl_constr_seq_c.svh"
 
    
 

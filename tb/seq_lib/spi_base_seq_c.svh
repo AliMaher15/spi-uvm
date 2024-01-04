@@ -11,7 +11,7 @@ class spi_base_seq_c extends  uvm_sequence #(uvm_sequence_item);
       super.new(name);
     endfunction : new
   
-    task body();
+    virtual task body();
       if(m_cfg == null) begin
         `uvm_fatal(get_full_name(), "env_config is null")
       end
