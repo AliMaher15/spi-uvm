@@ -110,13 +110,13 @@ task spi_sb_comparator_c::compare_mosi(input spi_item_c exp_mosi  , spi_item_c o
         if(out_mosi.rst_op) continue;
         if (exp_mosi.SPI_MOSI == out_mosi.SPI_MOSI) begin
             PASS_mosi();
-            `uvm_info ("PASS ", $sformatf("\nActual=%s   Expected=%s \n",
+            `uvm_info ("PASS ", $sformatf("\nmosi\nActual=%s\nExpected=%s \n",
                                 out_mosi.sprint(), 
                                 exp_mosi.sprint()), UVM_HIGH)
         end
         else begin 
             ERROR_mosi();
-            `uvm_error("ERROR", $sformatf("\nActual=%s   Expected=%s \n",  
+            `uvm_error("ERROR", $sformatf("\nmosi\nActual=%s\nExpected=%s \n",  
                                 out_mosi.sprint(),
                                 exp_mosi.sprint()))
         end
@@ -135,13 +135,13 @@ task spi_sb_comparator_c::compare_rxbyte(input spi_item_c exp_rxbyte, spi_item_c
         if(out_rxbyte.rst_op) continue;
         if (exp_rxbyte.o_RX_Byte == out_rxbyte.o_RX_Byte) begin
             PASS_rxbyte();
-            `uvm_info ("PASS ", $sformatf("\nActual=%s   Expected=%s \n",
+            `uvm_info ("PASS ", $sformatf("\nrxbyte\nActual=%s\nExpected=%s \n",
                                 out_rxbyte.sprint(), 
                                 exp_rxbyte.sprint()), UVM_HIGH)
         end
         else begin 
             ERROR_rxbyte();
-            `uvm_error("ERROR", $sformatf("\nActual=%s   Expected=%s \n",  
+            `uvm_error("ERROR", $sformatf("\nrxbyte\nActual=%s\nExpected=%s \n",  
                                 out_rxbyte.sprint(),
                                 exp_rxbyte.sprint()))
         end
