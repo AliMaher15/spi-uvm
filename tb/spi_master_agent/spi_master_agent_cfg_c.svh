@@ -2,7 +2,8 @@ class spi_master_agent_cfg_c extends uvm_object;
 
     // Interface handle
     //
-    virtual     spi_master_intf       vif;
+    virtual     spi_master_intf.mon_mp       mon_vif;
+    virtual     spi_master_intf.drv_mp       drv_vif;
 
     // Variables
     //

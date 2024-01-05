@@ -52,7 +52,9 @@ initial begin
     // Set interfaces handles to uvm_test_top
     uvm_resource_db#(virtual rst_intf)::set("rst_intf", "rst_i", rst_i);
 
-    uvm_config_db#(virtual spi_master_intf    )::set(null, "uvm_test_top", "SPI_MASTER_IF", SPI_MASTER_IF);
+    uvm_config_db#(virtual spi_master_intf.drv_mp    )::set(null, "uvm_test_top", "SPI_MASTER_DRV_MP", SPI_MASTER_IF.drv_mp);
+    uvm_config_db#(virtual spi_master_intf.mon_mp    )::set(null, "uvm_test_top", "SPI_MASTER_MON_MP", SPI_MASTER_IF.mon_mp);
+
     uvm_config_db#(virtual spi_controller_intf)::set(null, "uvm_test_top", "SPI_CONT_IF" , SPI_CONT_IF);
 
     run_test();

@@ -4,8 +4,8 @@ class spi_master_driver_c extends uvm_driver#(spi_item_c);
     
     // Interface and Config handles
     //
-	virtual spi_master_intf         vif;
-	spi_master_agent_cfg_c          m_cfg;
+	virtual    spi_master_intf.drv_mp         vif;
+	spi_master_agent_cfg_c                  m_cfg;
 
     // Variables
     //
@@ -42,7 +42,7 @@ function void spi_master_driver_c::build_phase(uvm_phase phase);
     if(!uvm_config_db#(spi_master_agent_cfg_c)::get(this, "", "spi_master_agent_cfg", m_cfg))
         `uvm_fatal(get_full_name(), "Failed to get agent_cfg from database")
 
-    vif = m_cfg.vif;
+    vif = m_cfg.drv_vif;
 endfunction: build_phase
 
 
@@ -76,10 +76,11 @@ task spi_master_driver_c::run_driver();
     forever begin
         seq_item_port.get_next_item(m_item);
         //****************************************************************//
+        `uvm_info(get_full_name(), $sformatf("\n driver, serialize: %b", m_item.data_to_serialize), UVM_HIGH)
         // set i_SPI_MISO (LSB first)
         for (int i=0; i<8; ++i) begin
-            @(posedge vif.o_SPI_Clk);  // from my understanding, this clock is always low in IDLE unless there is transmission
-            vif.i_SPI_MISO <= m_item.data_to_serialize[i];
+            @(vif.drv_cb);  // from my understanding, this clock is always low in IDLE unless there is transmission
+            vif.drv_cb.i_SPI_MISO <= m_item.data_to_serialize[i];
         end
         
         // finished, next!!
@@ -91,5 +92,5 @@ endtask : run_driver
 
 // Function: cleanup
 function void spi_master_driver_c::cleanup();
-    vif.i_SPI_MISO    <= 0;
+    vif.drv_cb.i_SPI_MISO    <= 0;
 endfunction : cleanup

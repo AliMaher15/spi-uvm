@@ -4,8 +4,8 @@ class spi_master_monitor_c extends uvm_monitor;
 
     // Interface and Config handles
     //
-	  virtual    spi_master_intf      vif;
-	  spi_master_agent_cfg_c          m_cfg;
+	  virtual    spi_master_intf.mon_mp      vif;
+	  spi_master_agent_cfg_c                 m_cfg;
 
     // Analysis Ports
     //
@@ -45,7 +45,7 @@ function void spi_master_monitor_c::build_phase(uvm_phase phase);
     if(!uvm_config_db#(spi_master_agent_cfg_c)::get(this, "", "spi_master_agent_cfg", m_cfg))
         `uvm_fatal(get_full_name(), "Failed to get agent_cfg from database")
 
-    vif = m_cfg.vif;
+    vif = m_cfg.mon_vif;
     spi_master_mon_inp_ap = new("spi_master_mon_inp_ap", this);
     spi_master_mon_out_ap = new("spi_master_mon_out_ap", this);
 endfunction: build_phase
@@ -79,9 +79,8 @@ task spi_master_monitor_c::input_monitor_run();
       // from my understanding. in Mode "1", serialized data is sampled at posedge
       // monitor the MISO serialization (LSB first) but then it is flipped in RX_byte
       for (int i=7; i>=0; --i) begin
-        @(posedge vif.o_SPI_Clk); // block the loop if no transmission
-        #1; // to prevent read-write race
-        spi_master_inp_item.SPI_MISO[i] = vif.i_SPI_MISO;
+        @(vif.mon_cb); // block the loop if no transmission
+        spi_master_inp_item.SPI_MISO[i] = vif.mon_cb.i_SPI_MISO;
       end
       spi_master_mon_inp_ap.write(spi_master_inp_item);
     end
@@ -100,8 +99,8 @@ task spi_master_monitor_c::output_monitor_run();
 
     // monitor the MOSI serialization (MSB first)
     for (int i=7; i>=0; --i) begin
-      @(posedge vif.o_SPI_Clk)
-      spi_master_out_item.SPI_MOSI[i] = vif.o_SPI_MOSI;
+      @(vif.mon_cb);
+      spi_master_out_item.SPI_MOSI[i] = vif.mon_cb.o_SPI_MOSI;
     end
     
     spi_master_mon_out_ap.write(spi_master_out_item);
