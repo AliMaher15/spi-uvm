@@ -104,10 +104,17 @@ task spi_sb_comparator_c::compare_mosi(input spi_item_c exp_mosi  , spi_item_c o
     forever begin 
         `uvm_info("sb_comparator run task", "WAITING for expected mosi output", UVM_DEBUG)
         mosi_expfifo.get(exp_mosi); 
-        if(exp_mosi.rst_op) continue;
+        if(exp_mosi.rst_op) begin
+            `uvm_info("sb_comparator compare_mosi", "flushing mosi_expfifo", UVM_FULL)
+            mosi_expfifo.flush();
+        end
         `uvm_info("sb_comparator run task", "WAITING for actual mosi output"  , UVM_DEBUG)
         mosi_outfifo.get(out_mosi); 
-        if(out_mosi.rst_op) continue;
+        if(out_mosi.rst_op) begin
+            `uvm_info("sb_comparator compare_mosi", "flushing mosi_outfifo", UVM_FULL)
+            mosi_outfifo.flush();
+            continue;
+        end
         if (exp_mosi.SPI_MOSI == out_mosi.SPI_MOSI) begin
             PASS_mosi();
             `uvm_info ("PASS ", $sformatf("\nmosi\nActual=%s\nExpected=%s \n",
@@ -129,10 +136,17 @@ task spi_sb_comparator_c::compare_rxbyte(input spi_item_c exp_rxbyte, spi_item_c
     forever begin 
         `uvm_info("sb_comparator run task", "WAITING for expected rx_byte output", UVM_DEBUG)
         rxbyte_expfifo.get(exp_rxbyte); 
-        if(exp_rxbyte.rst_op) continue;
+        if(exp_rxbyte.rst_op) begin
+            `uvm_info("sb_comparator compare_rxbyte", "flushing rxbyte_expfifo", UVM_FULL)
+            rxbyte_expfifo.flush();
+        end
         `uvm_info("sb_comparator run task", "WAITING for actual rx_byte output"  , UVM_DEBUG)
         rxbyte_outfifo.get(out_rxbyte); 
-        if(out_rxbyte.rst_op) continue;
+        if(out_rxbyte.rst_op) begin
+            `uvm_info("sb_comparator compare_rxbyte", "flushing rxbyte_outfifo", UVM_FULL)
+            rxbyte_outfifo.flush();
+            continue;
+        end
         if (exp_rxbyte.o_RX_Byte == out_rxbyte.o_RX_Byte) begin
             PASS_rxbyte();
             `uvm_info ("PASS ", $sformatf("\nrxbyte\nActual=%s\nExpected=%s \n",

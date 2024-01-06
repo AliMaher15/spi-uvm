@@ -9,14 +9,16 @@ class spi_controller_only_test_c extends  spi_base_test_c;
       super.new(name,parent);
    endfunction : new
 
-   // Task: run_phase
-   extern task run_phase(uvm_phase phase);
+   // Task: main_phase
+   extern virtual task main_phase(uvm_phase phase);
   
   endclass : spi_controller_only_test_c
 
 
-// Task: run_phase
-task spi_controller_only_test_c::run_phase(uvm_phase phase);
+// Task: main_phase
+// This is where the stimulus specified by the test case is generated and applied to the DUT.
+// It completes when either all stimulus is exhausted or a timeout occurs
+task spi_controller_only_test_c::main_phase(uvm_phase phase);
 
   //vseq_class_name              vseq_handle   = seq_class_name     ::type_id       ::create("vseq_handle");
   spi_controller_only_vseq_c     m_spi_vseq = spi_controller_only_vseq_c::type_id::create("m_spi_vseq");
@@ -24,7 +26,7 @@ task spi_controller_only_test_c::run_phase(uvm_phase phase);
     
   phase.raise_objection(this);
 
-  super.run_phase(phase); 
+  super.main_phase(phase); 
   
     `uvm_info(get_full_name(),"Starting test", UVM_LOW)
 
@@ -37,4 +39,4 @@ task spi_controller_only_test_c::run_phase(uvm_phase phase);
   
   phase.drop_objection(this);
   
-endtask : run_phase
+endtask : main_phase

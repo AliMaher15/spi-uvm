@@ -10,7 +10,7 @@ class spi_controller_and_master_test_c extends  spi_base_test_c;
    endfunction : new
 
    // Task: run_phase
-   extern task run_phase(uvm_phase phase);
+   extern virtual task run_phase(uvm_phase phase);
   
   endclass : spi_controller_and_master_test_c
 
@@ -33,7 +33,7 @@ task spi_controller_and_master_test_c::run_phase(uvm_phase phase);
      fork
       m_spi_cont_vseq.start(m_spi_env.m_vseqr);  
       m_spi_m_vseq.start(m_spi_env.m_vseqr);
-     join
+    join_any // for timeout management
           
     #1000ns;
 

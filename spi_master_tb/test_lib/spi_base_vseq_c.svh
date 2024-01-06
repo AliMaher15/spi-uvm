@@ -8,6 +8,8 @@ class spi_base_vseq_c extends  uvm_sequence#(uvm_sequence_item);
     `uvm_declare_p_sequencer(spi_vsequencer_c)
 
     spi_env_cfg_c      m_cfg;
+
+    int run_seq_count = 16;
   
   
     // Contructor: new

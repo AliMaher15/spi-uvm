@@ -1,7 +1,7 @@
 // Class: active_reset_test_c
 //
 // jump to the pre_reset_phase during main_phase
-class active_reset_test_c extends spi_base_test_c;
+class active_reset_test_c extends spi_controller_and_master_test_c;
     `uvm_component_utils(active_reset_test_c)
  
     // field: hit_reset

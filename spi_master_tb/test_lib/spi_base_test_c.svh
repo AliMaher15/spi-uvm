@@ -29,7 +29,7 @@ class spi_base_test_c extends  uvm_test;
     // Function: build_phase
     extern virtual function void build_phase(uvm_phase phase);
     // Task:     configure_phase
-    extern virtual task configure_phase(uvm_phase phase);
+    //extern virtual task configure_phase(uvm_phase phase);
     // Function: set_seqs
     extern virtual function void set_seqs(spi_base_vseq_c seq);
     // Function: start_of_simulation_phase
@@ -40,6 +40,7 @@ endclass : spi_base_test_c
 
 
 // Function: build_phase
+// Used to construct the testbenchcomponents
 function void spi_base_test_c::build_phase(uvm_phase phase);
   // Create configuration objects
   m_spi_env_cfg               = spi_env_cfg_c             ::type_id::create("m_spi_env_cfg");
@@ -80,11 +81,13 @@ endfunction : build_phase
 
 
 // Task: configure_phase
-task spi_base_test_c::configure_phase(uvm_phase phase);
+// configure phase is used to program the DUT
+// and any memories in the testbench so that it is ready for the start of the test case
+/*task spi_base_test_c::configure_phase(uvm_phase phase);
   phase.raise_objection(this);
   #(100ns);
   phase.drop_objection(this);
-endtask : configure_phase
+endtask : configure_phase*/
 
 
 // Function: set_seqs
@@ -95,7 +98,7 @@ endfunction
 
 
 // Function: start_of_simulation_phase
-// Print Testbench structure and factory contents
+// used for printing testbench topology or configuration information
 function void spi_base_test_c::start_of_simulation_phase(uvm_phase phase);
   super.start_of_simulation_phase(phase);
   if (uvm_report_enabled(UVM_MEDIUM)) begin

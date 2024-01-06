@@ -1,7 +1,7 @@
 // Class: idle_reset_test_c
 //
 // jump to pre_reset_phase after the simulation and all transactions are ended during shutdown phase
-class idle_reset_test_c extends spi_base_test_c;
+class idle_reset_test_c extends spi_controller_and_master_test_c;
     `uvm_component_utils(idle_reset_test_c)
  
     // field: run_count
@@ -15,12 +15,11 @@ class idle_reset_test_c extends spi_base_test_c;
     virtual function void phase_ready_to_end(uvm_phase phase);
        super.phase_ready_to_end(phase);
        if(phase.get_imp() == uvm_shutdown_phase::get()) begin
- 
-      if(run_count == 0) begin
-         `uvm_info("test", "Hitting Reset!!!", UVM_NONE)
-             phase.jump(uvm_pre_reset_phase::get());
-             run_count++;
-      end
+         if(run_count == 0) begin
+            `uvm_info("test", "Hitting Reset!!!", UVM_NONE)
+               phase.jump(uvm_pre_reset_phase::get());
+               run_count++;
+         end
        end
     endfunction : phase_ready_to_end
  endclass : idle_reset_test_c

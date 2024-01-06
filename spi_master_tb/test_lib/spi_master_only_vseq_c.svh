@@ -31,6 +31,8 @@ task spi_master_only_vseq_c::body();
   seq_set_cfg(spi_mast_contr_seq_h);
   // start
   super.body();
-    repeat(51) spi_mast_seq_h.start(p_sequencer.m_spi_master_agent_seqr);
-    repeat(11) spi_mast_contr_seq_h.start(p_sequencer.m_spi_master_agent_seqr);
+    repeat(run_seq_count) begin
+      spi_mast_seq_h.start(p_sequencer.m_spi_master_agent_seqr);
+      spi_mast_contr_seq_h.start(p_sequencer.m_spi_master_agent_seqr);
+    end
 endtask : body
