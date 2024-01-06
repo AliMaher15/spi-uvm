@@ -1,8 +1,4 @@
 
-vcover merge  coverage/spi_cov.ucdb \
-              coverage/spi_controller_only_test_c.ucdb   \
-              coverage/spi_controller_and_master_test_c.ucdb  
-
 # can use instance=/tb/dut/* to cover all dut's instances
 
 vcover report coverage/spi_cov.ucdb  -cvg      -details                                 -output   coverage/fun_coverage.txt

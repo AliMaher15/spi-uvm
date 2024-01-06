@@ -1,7 +1,7 @@
 // Class: spi_sb_comparator_c
 //
 // compare:
-    // predicted MOSI vs actual MOSI
+    // predicted MISO vs actual MISO
     // predicted RX_Byte vs actual RX_Byte
 class spi_sb_comparator_c extends uvm_component;
 
@@ -12,25 +12,25 @@ class spi_sb_comparator_c extends uvm_component;
     //
     // actual outputs
     uvm_analysis_export   #(spi_item_c)       axp_rxbyte_out; // controller 
-    uvm_analysis_export   #(spi_item_c)       axp_mosi_out;   // master interface
+    uvm_analysis_export   #(spi_item_c)       axp_miso_out;   // master interface
     // predicted outputs
     uvm_analysis_export   #(spi_item_c)       axp_rxbyte_in;  // controller
-    uvm_analysis_export   #(spi_item_c)       axp_mosi_in;    // master interface
+    uvm_analysis_export   #(spi_item_c)       axp_miso_in;    // master interface
     
     
     
     // TLM FIFOs
     //
-    // fifo to extract MOSI writes one by one
-    uvm_tlm_analysis_fifo #(spi_item_c)       mosi_expfifo;
-    uvm_tlm_analysis_fifo #(spi_item_c)       mosi_outfifo;
+    // fifo to extract MISO writes one by one
+    uvm_tlm_analysis_fifo #(spi_item_c)       miso_expfifo;
+    uvm_tlm_analysis_fifo #(spi_item_c)       miso_outfifo;
     // fifo to extract RX_Byte writes one by one
     uvm_tlm_analysis_fifo #(spi_item_c)       rxbyte_expfifo;
     uvm_tlm_analysis_fifo #(spi_item_c)       rxbyte_outfifo;
 
     // Variables
     //
-    int VECT_CNT_mosi, PASS_CNT_mosi, ERROR_CNT_mosi;
+    int VECT_CNT_miso, PASS_CNT_miso, ERROR_CNT_miso;
     int VECT_CNT_rxbyte, PASS_CNT_rxbyte, ERROR_CNT_rxbyte;
     
 
@@ -50,15 +50,15 @@ class spi_sb_comparator_c extends uvm_component;
     extern task run_phase(uvm_phase phase);
     // Function: report_phase
     extern function void report_phase(uvm_phase phase); 
-    // Task: compare_mosi
-    extern task compare_mosi(input spi_item_c exp_mosi  , spi_item_c out_mosi);
+    // Task: compare_miso
+    extern task compare_miso(input spi_item_c exp_miso  , spi_item_c out_miso);
     // Task: compare_rxbyte
     extern task compare_rxbyte(input spi_item_c exp_rxbyte, spi_item_c out_rxbyte);
     // Functions: PASS
-    extern function void PASS_mosi(); 
+    extern function void PASS_miso(); 
     extern function void PASS_rxbyte();
     // Functions: ERROR
-    extern function void ERROR_mosi(); 
+    extern function void ERROR_miso(); 
     extern function void ERROR_rxbyte(); 
     
 endclass : spi_sb_comparator_c
@@ -66,13 +66,13 @@ endclass : spi_sb_comparator_c
 
 // Function: build_phase
 function void spi_sb_comparator_c::build_phase(uvm_phase phase);
-    axp_mosi_in     = new("axp_mosi_in"    , this);
-    axp_mosi_out    = new("axp_mosi_out"   , this); 
+    axp_miso_in     = new("axp_miso_in"    , this);
+    axp_miso_out    = new("axp_miso_out"   , this); 
     axp_rxbyte_in   = new("axp_rxbyte_in"  , this);
     axp_rxbyte_out  = new("axp_rxbyte_out" , this); 
 
-    mosi_expfifo    = new("mosi_expfifo"   , this); 
-    mosi_outfifo    = new("mosi_outfifo"   , this); 
+    miso_expfifo    = new("miso_expfifo"   , this); 
+    miso_outfifo    = new("miso_outfifo"   , this); 
     rxbyte_expfifo  = new("rxbyte_expfifo" , this); 
     rxbyte_outfifo  = new("rxbyte_outfifo" , this); 
 endfunction : build_phase
@@ -81,8 +81,8 @@ endfunction : build_phase
 // Function: connect_phase
 function void spi_sb_comparator_c::connect_phase(uvm_phase phase); 
     super.connect_phase(phase);
-    axp_mosi_in    .connect(mosi_expfifo  .analysis_export); 
-    axp_mosi_out   .connect(mosi_outfifo  .analysis_export); 
+    axp_miso_in    .connect(miso_expfifo  .analysis_export); 
+    axp_miso_out   .connect(miso_outfifo  .analysis_export); 
     axp_rxbyte_in  .connect(rxbyte_expfifo.analysis_export); 
     axp_rxbyte_out .connect(rxbyte_outfifo.analysis_export);
 endfunction : connect_phase
@@ -90,38 +90,38 @@ endfunction : connect_phase
 
 // Task: run_phase
 task spi_sb_comparator_c::run_phase(uvm_phase phase);
-    spi_item_c     exp_mosi, out_mosi;
+    spi_item_c     exp_miso, out_miso;
     spi_item_c     exp_rxbyte, out_rxbyte;
     fork
-        compare_mosi  (exp_mosi  , out_mosi);
+        compare_miso  (exp_miso  , out_miso);
         compare_rxbyte(exp_rxbyte, out_rxbyte); 
     join
 endtask: run_phase
 
 
-// Task: compare_mosi
-task spi_sb_comparator_c::compare_mosi(input spi_item_c exp_mosi  , spi_item_c out_mosi);
+// Task: compare_miso
+task spi_sb_comparator_c::compare_miso(input spi_item_c exp_miso  , spi_item_c out_miso);
     forever begin 
-        `uvm_info("sb_comparator run task", "WAITING for expected mosi output", UVM_DEBUG)
-        mosi_expfifo.get(exp_mosi); 
-        if(exp_mosi.rst_op) continue;
-        `uvm_info("sb_comparator run task", "WAITING for actual mosi output"  , UVM_DEBUG)
-        mosi_outfifo.get(out_mosi); 
-        if(out_mosi.rst_op) continue;
-        if (exp_mosi.SPI_MOSI == out_mosi.SPI_MOSI) begin
-            PASS_mosi();
-            `uvm_info ("PASS ", $sformatf("\nmosi\nActual=%s\nExpected=%s \n",
-                                out_mosi.sprint(), 
-                                exp_mosi.sprint()), UVM_HIGH)
+        `uvm_info("sb_comparator run task", "WAITING for expected miso output", UVM_DEBUG)
+        miso_expfifo.get(exp_miso); 
+        if(exp_miso.rst_op) continue;
+        `uvm_info("sb_comparator run task", "WAITING for actual miso output"  , UVM_DEBUG)
+        miso_outfifo.get(out_miso); 
+        if(out_miso.rst_op) continue;
+        if (exp_miso.SPI_MISO == out_miso.SPI_MISO) begin
+            PASS_miso();
+            `uvm_info ("PASS ", $sformatf("\nmiso\nActual=%s\nExpected=%s \n",
+                                out_miso.sprint(), 
+                                exp_miso.sprint()), UVM_HIGH)
         end
         else begin 
-            ERROR_mosi();
-            `uvm_error("ERROR", $sformatf("\nmosi\nActual=%s\nExpected=%s \n",  
-                                out_mosi.sprint(),
-                                exp_mosi.sprint()))
+            ERROR_miso();
+            `uvm_error("ERROR", $sformatf("\nmiso\nActual=%s\nExpected=%s \n",  
+                                out_miso.sprint(),
+                                exp_miso.sprint()))
         end
     end
-endtask: compare_mosi
+endtask: compare_miso
 
 
 // Task: compare_rxbyte
@@ -152,12 +152,12 @@ endtask: compare_rxbyte
 // Function: report_phase
 function void spi_sb_comparator_c::report_phase(uvm_phase phase); 
     super.report_phase(phase); 
-    if (VECT_CNT_mosi && !ERROR_CNT_mosi) begin
-        `uvm_info(get_type_name(),$sformatf("\n\n\n*** TEST PASSED - txbyte vs mosi - %0d vectors ran, %0d vectors passed ***\n", 
-                                            VECT_CNT_mosi, PASS_CNT_mosi), UVM_LOW) 
+    if (VECT_CNT_miso && !ERROR_CNT_miso) begin
+        `uvm_info(get_type_name(),$sformatf("\n\n\n*** TEST PASSED - txbyte vs miso - %0d vectors ran, %0d vectors passed ***\n", 
+                                            VECT_CNT_miso, PASS_CNT_miso), UVM_LOW) 
     end else begin
-        `uvm_info(get_type_name(), $sformatf("\n\n\n*** TEST FAILED - txbyte vs mosi - %0d vectors ran, %0d vectors passed, %0d vectors failed ***\n",
-                                             VECT_CNT_mosi, PASS_CNT_mosi, ERROR_CNT_mosi), UVM_LOW)
+        `uvm_info(get_type_name(), $sformatf("\n\n\n*** TEST FAILED - txbyte vs miso - %0d vectors ran, %0d vectors passed, %0d vectors failed ***\n",
+                                             VECT_CNT_miso, PASS_CNT_miso, ERROR_CNT_miso), UVM_LOW)
     end
 
     if (VECT_CNT_rxbyte && !ERROR_CNT_rxbyte) begin
@@ -171,10 +171,10 @@ endfunction: report_phase
 
 
 // Functions: PASS
-function void spi_sb_comparator_c::PASS_mosi(); 
-    VECT_CNT_mosi++;
-    PASS_CNT_mosi++;
-endfunction: PASS_mosi
+function void spi_sb_comparator_c::PASS_miso(); 
+    VECT_CNT_miso++;
+    PASS_CNT_miso++;
+endfunction: PASS_miso
 
 function void spi_sb_comparator_c::PASS_rxbyte();
     VECT_CNT_rxbyte++;
@@ -184,10 +184,10 @@ endfunction: PASS_rxbyte
 
 
 // Functions: ERROR
-function void spi_sb_comparator_c::ERROR_mosi();
-    VECT_CNT_mosi++;
-    ERROR_CNT_mosi++;
-endfunction: ERROR_mosi
+function void spi_sb_comparator_c::ERROR_miso();
+    VECT_CNT_miso++;
+    ERROR_CNT_miso++;
+endfunction: ERROR_miso
 
 function void spi_sb_comparator_c::ERROR_rxbyte();
     VECT_CNT_rxbyte++;

@@ -12,8 +12,8 @@ transcript file log/RUN_LOG.log
 #***************************************************#
 # Compile RTL and TB files
 #***************************************************#
-vlog -f scripts/dut.f
-vlog -f scripts/tb.f     +define+def_spi_CLK_PERIOD=10
+do scripts/compile_dut.do
+do scripts/compile_tb.do
 
 #***************************************************#
 # Optimizing Design with vopt
