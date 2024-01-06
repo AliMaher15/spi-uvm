@@ -1,15 +1,15 @@
 # QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 20:47:54 on Jan 04,2024
+# Start time: 03:24:44 on Jan 06,2024
 # vlog -reportprogress 300 -f scripts/dut.f 
 # -- Compiling module SPI_Master
 # 
 # Top level modules:
 # 	SPI_Master
-# End time: 20:47:55 on Jan 04,2024, Elapsed time: 0:00:01
+# End time: 03:24:44 on Jan 06,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 20:47:55 on Jan 04,2024
-# vlog -reportprogress 300 -f scripts/tb.f 
+# Start time: 03:24:44 on Jan 06,2024
+# vlog -reportprogress 300 -f scripts/tb.f "+define+def_spi_CLK_PERIOD=10" 
 # -- Compiling interface rst_intf
 # -- Compiling package spi_global_params_pkg
 # -- Compiling package spi_item_pkg
@@ -33,11 +33,11 @@
 # 
 # Top level modules:
 # 	spi_tb_top
-# End time: 20:47:56 on Jan 04,2024, Elapsed time: 0:00:01
+# End time: 03:24:46 on Jan 06,2024, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 20:47:56 on Jan 04,2024
-# vopt -reportprogress 300 spi_tb_top -o top_opt -debugdb "+acc" "+cover=sbecf+/spi_tb_top/spi_master_dut" "+nocover=sbceft+/spi_test_pkg+/spi_seq_pkg+/spi_master_agent_pkg+/spi_controller_agent_pkg" 
+# Start time: 03:24:46 on Jan 06,2024
+# vopt -reportprogress 300 spi_tb_top -o top_opt -debugdb "+acc" "+cover=sbecf" 
 # 
 # Top level modules:
 # 	spi_tb_top
@@ -57,6 +57,7 @@
 # -- Loading interface spi_controller_intf
 # -- Loading interface rst_intf
 # -- Loading module SPI_Master
+# ** Warning: (vopt-13408) Code coverage will be disabled for some DUs/packages/classes and source files.
 # Optimizing 17 design-units (inlining 0/5 module instances):
 # -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
 # -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
@@ -69,14 +70,14 @@
 # -- Optimizing package spi_test_pkg(fast)
 # -- Optimizing module SPI_Master(fast)
 # -- Processing module SPI_Master(fast) for debug
+# -- Optimizing interface spi_controller_intf(fast__2)
 # -- Optimizing module spi_tb_top(fast)
 # -- Processing module spi_tb_top(fast) for debug
-# -- Optimizing interface spi_controller_intf(fast__2)
 # -- Optimizing interface spi_master_intf(fast__2)
 # -- Optimizing interface rst_intf(fast__2)
 # -- Optimizing interface rst_intf(fast)
 # -- Optimizing interface spi_controller_intf(fast)
 # -- Optimizing interface spi_master_intf(fast)
 # Optimized design name is top_opt
-# End time: 20:48:02 on Jan 04,2024, Elapsed time: 0:00:06
-# Errors: 0, Warnings: 0
+# End time: 03:24:52 on Jan 06,2024, Elapsed time: 0:00:06
+# Errors: 0, Warnings: 1

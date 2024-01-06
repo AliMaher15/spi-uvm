@@ -1,5 +1,5 @@
 # vsim top_opt -c -assertdebug -debugDB -fsmdebug -coverage "+UVM_TESTNAME=spi_controller_only_test_c" 
-# Start time: 20:48:02 on Jan 04,2024
+# Start time: 03:12:22 on Jan 06,2024
 # Loading sv_std.std
 # Loading work.spi_master_intf(fast)
 # Loading work.spi_controller_intf(fast)
@@ -49,90 +49,90 @@
 # -----------------------------------------------------------------------------------------
 # Name                                    Type                                Size  Value  
 # -----------------------------------------------------------------------------------------
-# uvm_test_top                            spi_controller_only_test_c          -     @483   
-#   m_rst_drv                             rst_driver_c                        -     @506   
-#     rsp_port                            uvm_analysis_port                   -     @521   
-#     seq_item_port                       uvm_seq_item_pull_port              -     @513   
+# uvm_test_top                            spi_controller_only_test_c          -     @493   
+#   m_rst_drv                             rst_driver_c                        -     @518   
+#     rsp_port                            uvm_analysis_port                   -     @533   
+#     seq_item_port                       uvm_seq_item_pull_port              -     @525   
 #     intf_name                           string                              5     rst_i  
 #     reset_time_ps                       integral                            32    'd72012
-#   m_spi_env                             spi_env_c                           -     @499   
-#     m_coverage                          spi_coverage_c                      -     @676   
-#       spi_cont_mon_in_imp               uvm_analysis_imp_spi_cont_mon_in    -     @691   
-#       spi_master_mon_in_imp             uvm_analysis_imp_spi_master_mon_in  -     @683   
-#     m_scoreboard                        spi_scoreboard_c                    -     @669   
-#       axp_miso_in                       uvm_analysis_export                 -     @699   
-#       axp_mosi_out                      uvm_analysis_export                 -     @707   
-#       axp_rxbyte_out                    uvm_analysis_export                 -     @723   
-#       axp_txbyte_in                     uvm_analysis_export                 -     @715   
-#       cmp                               spi_sb_comparator_c                 -     @738   
-#         axp_mosi_in                     uvm_analysis_export                 -     @745   
-#         axp_mosi_out                    uvm_analysis_export                 -     @753   
-#         axp_rxbyte_in                   uvm_analysis_export                 -     @761   
-#         axp_rxbyte_out                  uvm_analysis_export                 -     @769   
-#         mosi_expfifo                    uvm_tlm_analysis_fifo #(T)          -     @777   
-#           analysis_export               uvm_analysis_imp                    -     @816   
-#           get_ap                        uvm_analysis_port                   -     @808   
-#           get_peek_export               uvm_get_peek_imp                    -     @792   
-#           put_ap                        uvm_analysis_port                   -     @800   
-#           put_export                    uvm_put_imp                         -     @784   
-#         mosi_outfifo                    uvm_tlm_analysis_fifo #(T)          -     @824   
-#           analysis_export               uvm_analysis_imp                    -     @863   
-#           get_ap                        uvm_analysis_port                   -     @855   
-#           get_peek_export               uvm_get_peek_imp                    -     @839   
-#           put_ap                        uvm_analysis_port                   -     @847   
-#           put_export                    uvm_put_imp                         -     @831   
-#         rxbyte_expfifo                  uvm_tlm_analysis_fifo #(T)          -     @871   
-#           analysis_export               uvm_analysis_imp                    -     @910   
-#           get_ap                        uvm_analysis_port                   -     @902   
-#           get_peek_export               uvm_get_peek_imp                    -     @886   
-#           put_ap                        uvm_analysis_port                   -     @894   
-#           put_export                    uvm_put_imp                         -     @878   
-#         rxbyte_outfifo                  uvm_tlm_analysis_fifo #(T)          -     @918   
-#           analysis_export               uvm_analysis_imp                    -     @957   
-#           get_ap                        uvm_analysis_port                   -     @949   
-#           get_peek_export               uvm_get_peek_imp                    -     @933   
-#           put_ap                        uvm_analysis_port                   -     @941   
-#           put_export                    uvm_put_imp                         -     @925   
-#       prd                               spi_sb_predictor_c                  -     @731   
-#         spi_cont_imp                    uvm_analysis_imp_spi_cont           -     @973   
-#         spi_master_imp                  uvm_analysis_imp_spi_m              -     @965   
-#         spi_master_predicted_mosi_ap    uvm_analysis_port                   -     @981   
-#         spi_master_predicted_rxbyte_ap  uvm_analysis_port                   -     @989   
-#     m_spi_controller_agent              spi_controller_agent_c              -     @553   
-#       m_driver                          spi_controller_driver_c             -     @1114  
-#         rsp_port                        uvm_analysis_port                   -     @1129  
-#         seq_item_port                   uvm_seq_item_pull_port              -     @1121  
-#       m_monitor                         spi_controller_monitor_c            -     @998   
-#         spi_controller_mon_inp_ap       uvm_analysis_port                   -     @1155  
-#         spi_controller_mon_out_ap       uvm_analysis_port                   -     @1163  
-#       m_seqr                            spi_controller_agent_seqr_c         -     @1005  
-#         rsp_export                      uvm_analysis_export                 -     @1012  
-#         seq_item_export                 uvm_seq_item_pull_imp               -     @1106  
+#   m_spi_env                             spi_env_c                           -     @511   
+#     m_coverage                          spi_coverage_c                      -     @688   
+#       spi_cont_mon_in_imp               uvm_analysis_imp_spi_cont_mon_in    -     @703   
+#       spi_master_mon_in_imp             uvm_analysis_imp_spi_master_mon_in  -     @695   
+#     m_scoreboard                        spi_scoreboard_c                    -     @681   
+#       axp_miso_in                       uvm_analysis_export                 -     @711   
+#       axp_mosi_out                      uvm_analysis_export                 -     @719   
+#       axp_rxbyte_out                    uvm_analysis_export                 -     @735   
+#       axp_txbyte_in                     uvm_analysis_export                 -     @727   
+#       cmp                               spi_sb_comparator_c                 -     @750   
+#         axp_mosi_in                     uvm_analysis_export                 -     @757   
+#         axp_mosi_out                    uvm_analysis_export                 -     @765   
+#         axp_rxbyte_in                   uvm_analysis_export                 -     @773   
+#         axp_rxbyte_out                  uvm_analysis_export                 -     @781   
+#         mosi_expfifo                    uvm_tlm_analysis_fifo #(T)          -     @789   
+#           analysis_export               uvm_analysis_imp                    -     @828   
+#           get_ap                        uvm_analysis_port                   -     @820   
+#           get_peek_export               uvm_get_peek_imp                    -     @804   
+#           put_ap                        uvm_analysis_port                   -     @812   
+#           put_export                    uvm_put_imp                         -     @796   
+#         mosi_outfifo                    uvm_tlm_analysis_fifo #(T)          -     @836   
+#           analysis_export               uvm_analysis_imp                    -     @875   
+#           get_ap                        uvm_analysis_port                   -     @867   
+#           get_peek_export               uvm_get_peek_imp                    -     @851   
+#           put_ap                        uvm_analysis_port                   -     @859   
+#           put_export                    uvm_put_imp                         -     @843   
+#         rxbyte_expfifo                  uvm_tlm_analysis_fifo #(T)          -     @883   
+#           analysis_export               uvm_analysis_imp                    -     @922   
+#           get_ap                        uvm_analysis_port                   -     @914   
+#           get_peek_export               uvm_get_peek_imp                    -     @898   
+#           put_ap                        uvm_analysis_port                   -     @906   
+#           put_export                    uvm_put_imp                         -     @890   
+#         rxbyte_outfifo                  uvm_tlm_analysis_fifo #(T)          -     @930   
+#           analysis_export               uvm_analysis_imp                    -     @969   
+#           get_ap                        uvm_analysis_port                   -     @961   
+#           get_peek_export               uvm_get_peek_imp                    -     @945   
+#           put_ap                        uvm_analysis_port                   -     @953   
+#           put_export                    uvm_put_imp                         -     @937   
+#       prd                               spi_sb_predictor_c                  -     @743   
+#         spi_cont_imp                    uvm_analysis_imp_spi_cont           -     @985   
+#         spi_master_imp                  uvm_analysis_imp_spi_m              -     @977   
+#         spi_master_predicted_mosi_ap    uvm_analysis_port                   -     @993   
+#         spi_master_predicted_rxbyte_ap  uvm_analysis_port                   -     @1001  
+#     m_spi_controller_agent              spi_controller_agent_c              -     @565   
+#       m_driver                          spi_controller_driver_c             -     @1126  
+#         rsp_port                        uvm_analysis_port                   -     @1141  
+#         seq_item_port                   uvm_seq_item_pull_port              -     @1133  
+#       m_monitor                         spi_controller_monitor_c            -     @1010  
+#         spi_controller_mon_inp_ap       uvm_analysis_port                   -     @1167  
+#         spi_controller_mon_out_ap       uvm_analysis_port                   -     @1175  
+#       m_seqr                            spi_controller_agent_seqr_c         -     @1017  
+#         rsp_export                      uvm_analysis_export                 -     @1024  
+#         seq_item_export                 uvm_seq_item_pull_imp               -     @1118  
 #         arbitration_queue               array                               0     -      
 #         lock_queue                      array                               0     -      
 #         num_last_reqs                   integral                            32    'd1    
 #         num_last_rsps                   integral                            32    'd1    
-#       spi_controller_agent_inp_ap       uvm_analysis_port                   -     @1137  
-#       spi_controller_agent_out_ap       uvm_analysis_port                   -     @1145  
-#     m_spi_master_agent                  spi_master_agent_c                  -     @546   
-#       m_driver                          spi_master_driver_c                 -     @1293  
-#         rsp_port                        uvm_analysis_port                   -     @1308  
-#         seq_item_port                   uvm_seq_item_pull_port              -     @1300  
-#       m_monitor                         spi_master_monitor_c                -     @1177  
-#         spi_master_mon_inp_ap           uvm_analysis_port                   -     @1334  
-#         spi_master_mon_out_ap           uvm_analysis_port                   -     @1342  
-#       m_seqr                            spi_master_agent_seqr_c             -     @1184  
-#         rsp_export                      uvm_analysis_export                 -     @1191  
-#         seq_item_export                 uvm_seq_item_pull_imp               -     @1285  
+#       spi_controller_agent_inp_ap       uvm_analysis_port                   -     @1149  
+#       spi_controller_agent_out_ap       uvm_analysis_port                   -     @1157  
+#     m_spi_master_agent                  spi_master_agent_c                  -     @558   
+#       m_driver                          spi_master_driver_c                 -     @1305  
+#         rsp_port                        uvm_analysis_port                   -     @1320  
+#         seq_item_port                   uvm_seq_item_pull_port              -     @1312  
+#       m_monitor                         spi_master_monitor_c                -     @1189  
+#         spi_master_mon_inp_ap           uvm_analysis_port                   -     @1346  
+#         spi_master_mon_out_ap           uvm_analysis_port                   -     @1354  
+#       m_seqr                            spi_master_agent_seqr_c             -     @1196  
+#         rsp_export                      uvm_analysis_export                 -     @1203  
+#         seq_item_export                 uvm_seq_item_pull_imp               -     @1297  
 #         arbitration_queue               array                               0     -      
 #         lock_queue                      array                               0     -      
 #         num_last_reqs                   integral                            32    'd1    
 #         num_last_rsps                   integral                            32    'd1    
-#       spi_master_agent_inp_ap           uvm_analysis_port                   -     @1316  
-#       spi_master_agent_out_ap           uvm_analysis_port                   -     @1324  
-#     m_vseqr                             spi_vsequencer_c                    -     @560   
-#       rsp_export                        uvm_analysis_export                 -     @567   
-#       seq_item_export                   uvm_seq_item_pull_imp               -     @661   
+#       spi_master_agent_inp_ap           uvm_analysis_port                   -     @1328  
+#       spi_master_agent_out_ap           uvm_analysis_port                   -     @1336  
+#     m_vseqr                             spi_vsequencer_c                    -     @572   
+#       rsp_export                        uvm_analysis_export                 -     @579   
+#       seq_item_export                   uvm_seq_item_pull_imp               -     @673   
 #       arbitration_queue                 array                               0     -      
 #       lock_queue                        array                               0     -      
 #       num_last_reqs                     integral                            32    'd1    
@@ -190,10 +190,10 @@
 # UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/test_lib//spi_controller_only_test_c.svh(33) @ 21955000: uvm_test_top [uvm_test_top] vseq complete
 # UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/test_lib//spi_controller_only_test_c.svh(36) @ 22955000: uvm_test_top [uvm_test_top] Ending test
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 22955000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_checkers/spi_sb_comparator_c.svh(156) @ 22955000: uvm_test_top.m_spi_env.m_scoreboard.cmp [spi_sb_comparator_c] 
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_checkers/spi_sb_comparator_c.svh(159) @ 22955000: uvm_test_top.m_spi_env.m_scoreboard.cmp [spi_sb_comparator_c] 
 # 
 # 
-# *** TEST PASSED - txbyte vs mosi - 61 vectors ran, 61 vectors passed ***
+# *** TEST FAILED - txbyte vs mosi - 0 vectors ran, 0 vectors passed, 0 vectors failed ***
 # 
 # UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_checkers/spi_sb_comparator_c.svh(164) @ 22955000: uvm_test_top.m_spi_env.m_scoreboard.cmp [spi_sb_comparator_c] 
 # 

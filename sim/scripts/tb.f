@@ -33,5 +33,3 @@ D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_tb_top.sv
 
 +incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/tb
 +incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/test_lib/
-
-+define+def_spi_CLK_PERIOD=10
