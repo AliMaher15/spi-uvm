@@ -4,8 +4,8 @@ class spi_controller_driver_c extends uvm_driver#(spi_item_c);
     
     // Interface and Config handles
     //
-	virtual spi_controller_intf         vif;
-	spi_controller_agent_cfg_c          m_cfg;
+	virtual spi_controller_intf.drv_mp         vif;
+	spi_controller_agent_cfg_c                 m_cfg;
 
     // Variables
     //
@@ -42,7 +42,7 @@ function void spi_controller_driver_c::build_phase(uvm_phase phase);
     if(!uvm_config_db#(spi_controller_agent_cfg_c)::get(this, "", "spi_controller_agent_cfg", m_cfg))
         `uvm_fatal(get_full_name(), "Failed to get agent_cfg from database")
 
-    vif = m_cfg.vif;
+    vif = m_cfg.drv_vif;
 endfunction: build_phase
 
 
@@ -77,17 +77,15 @@ task spi_controller_driver_c::run_driver();
         seq_item_port.get_next_item(m_item);
         //****************************************************************//
         // wait for the master to be ready to recieve a new byte (a blocking if condition)
-        wait(vif.o_TX_Ready);
-        // User control
+        wait(vif.drv_cb.o_TX_Ready);
+            // User control
         // set i_TX_Byte & i_TX_DV
-        vif.i_TX_Byte <= m_item.i_TX_Byte;
-        while (m_item.delay > 0) begin
-            @(posedge vif.i_Clk);
-            m_item.delay--;
-        end
-        vif.i_TX_DV   <= 1;
-        @(posedge vif.i_Clk);
-        vif.i_TX_DV   <= 0; // data valid is only up for 1 clock cycle
+        vif.drv_cb.i_TX_Byte <= m_item.i_TX_Byte;
+        repeat(m_item.delay)
+            @(vif.drv_cb);
+        vif.drv_cb.i_TX_DV   <= 1;
+        @(vif.drv_cb);
+        vif.drv_cb.i_TX_DV   <= 0; // data valid is only up for 1 clock cycle
         // finished, next!!
         //****************************************************************//
         seq_item_port.item_done();
@@ -97,6 +95,6 @@ endtask : run_driver
 
 // Function: cleanup
 function void spi_controller_driver_c::cleanup();
-    vif.i_TX_Byte    <= '0;
-    vif.i_TX_DV      <= 0;
+    vif.drv_cb.i_TX_Byte    <= '0;
+    vif.drv_cb.i_TX_DV      <= 0;
 endfunction : cleanup

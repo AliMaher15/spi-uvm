@@ -55,7 +55,8 @@ initial begin
     uvm_config_db#(virtual spi_master_intf.drv_mp    )::set(null, "uvm_test_top", "SPI_MASTER_DRV_MP", SPI_MASTER_IF.drv_mp);
     uvm_config_db#(virtual spi_master_intf.mon_mp    )::set(null, "uvm_test_top", "SPI_MASTER_MON_MP", SPI_MASTER_IF.mon_mp);
 
-    uvm_config_db#(virtual spi_controller_intf)::set(null, "uvm_test_top", "SPI_CONT_IF" , SPI_CONT_IF);
+    uvm_config_db#(virtual spi_controller_intf.drv_mp)::set(null, "uvm_test_top", "SPI_CONT_DRV_MP" , SPI_CONT_IF.drv_mp);
+    uvm_config_db#(virtual spi_controller_intf.mon_mp)::set(null, "uvm_test_top", "SPI_CONT_MON_MP" , SPI_CONT_IF.mon_mp);
 
     run_test();
 end

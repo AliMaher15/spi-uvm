@@ -46,13 +46,15 @@ function void spi_base_test_c::build_phase(uvm_phase phase);
   m_spi_master_agent_cfg      = spi_master_agent_cfg_c    ::type_id::create("m_spi_master_agent_cfg");
   m_spi_controller_agent_cfg  = spi_controller_agent_cfg_c::type_id::create("m_spi_controller_agent_cfg");
 
-  // get interfaces
+  // get interfaces and modports
   if(!uvm_config_db #(virtual spi_master_intf.mon_mp)    ::get(this, "","SPI_MASTER_MON_MP",  m_spi_master_agent_cfg.mon_vif))
   `uvm_fatal(get_full_name(), "Failed to get spi_master_if")
   if(!uvm_config_db #(virtual spi_master_intf.drv_mp)    ::get(this, "","SPI_MASTER_DRV_MP",  m_spi_master_agent_cfg.drv_vif))
   `uvm_fatal(get_full_name(), "Failed to get spi_master_if")
-
-  if(!uvm_config_db #(virtual spi_controller_intf)::get(this, "","SPI_CONT_IF"  ,  m_spi_controller_agent_cfg.vif))
+  //
+  if(!uvm_config_db #(virtual spi_controller_intf.mon_mp)::get(this, "","SPI_CONT_MON_MP"  ,  m_spi_controller_agent_cfg.mon_vif))
+  `uvm_fatal(get_full_name(), "Failed to get spi_controller_if")
+  if(!uvm_config_db #(virtual spi_controller_intf.drv_mp)::get(this, "","SPI_CONT_DRV_MP"  ,  m_spi_controller_agent_cfg.drv_vif))
   `uvm_fatal(get_full_name(), "Failed to get spi_controller_if")
 
   // Set configuration variables and randomize if needed

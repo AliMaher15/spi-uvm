@@ -16,6 +16,32 @@ logic             o_RX_DV;           // Data Valid pulse (1 clock cycle)
 logic    [7:0]    o_RX_Byte;         // [MASTER] Byte received on MISO  || [SLAVE] Byte recieved on MOSI
 
 
+// Clocking Block: mon_cb
+//
+clocking mon_cb @(negedge i_Clk);
+  input 		      i_TX_Byte;
+  input           i_TX_DV;    
+  input           o_TX_Ready; 
+  input           o_RX_DV; 
+  input           o_RX_Byte; 
+endclocking : mon_cb
+
+
+// Clocking Block: drv_cb
+//
+// input #0 is used because this isn't time aware and there is no setup time rules
+clocking drv_cb @(posedge i_Clk or negedge i_Rst_L);
+  default input #0;
+  input           o_TX_Ready;
+  output 		      i_TX_Byte;
+  output 		      i_TX_DV;
+endclocking : drv_cb
+
+// ModPorts
+modport mon_mp(clocking mon_cb, input i_Rst_L);
+modport drv_mp(clocking drv_cb, input i_Rst_L);
+
+
 //********* MACROS FUNCTIONS ***********//
 `define spi_cont_assert_clk(arg) \
   assert property (@(posedge i_Clk) disable iff (!i_Rst_L) arg);
