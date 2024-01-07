@@ -65,7 +65,7 @@ endfunction : write_spi_m
 // Function: rxbyte_predictor
 // check the value driven on SPI_MISO which the dut should read and report on RX_Byte
 function spi_item_c spi_sb_predictor_c::rxbyte_predictor(input spi_item_c t);
-    static bit  [7:0]  predicted_rxbyte;
+    bit  [7:0]  predicted_rxbyte;
 
     spi_item_c    tr;
     tr = spi_item_c::type_id::create("tr");
@@ -94,7 +94,7 @@ endfunction : write_spi_cont
 // Function: mosi_predictor
 // check the value driven on i_TX_Byte which the dut should serialize on SPI_MOSI
 function spi_item_c spi_sb_predictor_c::mosi_predictor(input spi_item_c t);
-    static bit  [7:0]  predicted_spi_mosi;
+    bit  [7:0]  predicted_spi_mosi;
 
     spi_item_c    tr;
     tr = spi_item_c::type_id::create("tr");

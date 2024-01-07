@@ -1,16 +1,16 @@
 # D:/Ali/Courses/Verification-Projects/SPI-uvm
 # QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 22:33:35 on Jan 06,2024
+# Start time: 12:54:42 on Jan 07,2024
 # vlog -reportprogress 300 D:/Ali/Courses/Verification-Projects/SPI-uvm/rtl/SPI_Master.v "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/rtl/" 
 # -- Compiling module SPI_Master
 # 
 # Top level modules:
 # 	SPI_Master
-# End time: 22:33:35 on Jan 06,2024, Elapsed time: 0:00:00
+# End time: 12:54:42 on Jan 07,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # D:/Ali/Courses/Verification-Projects/SPI-uvm
 # QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 22:33:35 on Jan 06,2024
+# Start time: 12:54:42 on Jan 07,2024
 # vlog -reportprogress 300 D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/rst_intf.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_global_params_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_item/spi_item_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent/spi_master_agent_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent/spi_master_intf.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_controller_agent/spi_controller_agent_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_controller_agent/spi_controller_intf.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_tb_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/seq_lib/spi_seq_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_tb_top.sv "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent/" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_controller_agent/" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_item/" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/seq_lib/" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/" "+define+def_spi_CLK_PERIOD=10" 
 # -- Compiling interface rst_intf
 # -- Compiling package spi_global_params_pkg
@@ -35,10 +35,10 @@
 # 
 # Top level modules:
 # 	spi_tb_top
-# End time: 22:33:37 on Jan 06,2024, Elapsed time: 0:00:02
+# End time: 12:54:43 on Jan 07,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 22:33:38 on Jan 06,2024
+# Start time: 12:54:43 on Jan 07,2024
 # vopt -reportprogress 300 spi_tb_top -o top_opt -debugdb "+acc" "+cover=sbecf" 
 # 
 # Top level modules:
@@ -81,6 +81,6 @@
 # -- Optimizing interface spi_controller_intf(fast)
 # -- Optimizing interface spi_master_intf(fast)
 # Optimized design name is top_opt
-# End time: 22:33:47 on Jan 06,2024, Elapsed time: 0:00:09
+# End time: 12:54:48 on Jan 07,2024, Elapsed time: 0:00:05
 # Errors: 0, Warnings: 1
 # active_reset_test_c

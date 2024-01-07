@@ -1,5 +1,5 @@
 # vsim top_opt -c -assertdebug -debugDB -fsmdebug -coverage "+UVM_TESTNAME=active_reset_test_c" 
-# Start time: 22:33:47 on Jan 06,2024
+# Start time: 12:54:48 on Jan 07,2024
 # Loading sv_std.std
 # Loading work.spi_master_intf(fast)
 # Loading work.spi_controller_intf(fast)
@@ -192,817 +192,97 @@
 # UVM_INFO @ 424012: uvm_test_top.m_spi_env.m_spi_controller_agent.m_seqr [uvm_test_top.m_spi_env.m_spi_controller_agent.m_seqr] Sequences stopped.  Removing request from sequencer fifo
 # UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/rst_driver_c.svh(39) @ 424012: uvm_test_top.m_rst_drv [rst] Going down.
 # UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/rst_driver_c.svh(43) @ 496024: uvm_test_top.m_rst_drv [rst] Going up.
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 1235000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=-----------------------------------------------
-# Name                 Type        Size  Value   
-# -----------------------------------------------
-# spi_master_out_item  spi_item_c  -     @1628   
-#   i_TX_Byte          integral    8     'b0     
-#   o_RX_Byte          integral    8     'b0     
-#   SPI_MOSI           integral    8     'b110110
-#   SPI_MISO           integral    8     'b0     
-#   data_to_serialize  integral    8     'b0     
-#   rst_op             integral    1     'b0     
-#   delay              integral    32    'd0     
-# -----------------------------------------------
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 845000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 00000000
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 1235000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 00110110
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 1605000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 00000000
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 1965000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 11000010
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 2325000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 11111111
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 2675000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 10100011
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 3025000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 00000000
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 3395000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 00100111
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 3765000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 11111111
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 4155000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 01110100
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 4505000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 11111111
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 4845000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 10110111
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 5235000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 11111111
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 5605000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 01011011
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 5965000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 11111111
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 6315000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 10110011
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 6675000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 11111111
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 7025000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 10111010
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 7405000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 00000000
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 7755000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 10101010
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 8135000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 11111111
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 8525000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 01101011
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 8885000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 11111111
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 9235000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 11111000
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 9605000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 11111111
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 9995000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 10111011
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 10385000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 11111111
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 10765000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 11000000
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent//spi_master_monitor_c.svh(105) @ 11155000: uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor] 
+#  monitor: writing mosi: 00000000
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_controller_and_master_test_c.svh(40) @ 11825000: uvm_test_top [uvm_test_top] Ending test
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 11825000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(164) @ 11825000: uvm_test_top.m_spi_env.m_scoreboard.cmp [spi_sb_comparator_c] 
 # 
-# Expected=--------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# tr                   spi_item_c  -     @1604
-#   i_TX_Byte          integral    8     'b0  
-#   o_RX_Byte          integral    8     'b0  
-#   SPI_MOSI           integral    8     'b0  
-#   SPI_MISO           integral    8     'b0  
-#   data_to_serialize  integral    8     'b0  
-#   rst_op             integral    1     'b0  
-#   delay              integral    32    'd0  
-# --------------------------------------------
-#  
 # 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 1605000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=--------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# spi_master_out_item  spi_item_c  -     @1668
-#   i_TX_Byte          integral    8     'b0  
-#   o_RX_Byte          integral    8     'b0  
-#   SPI_MOSI           integral    8     'b0  
-#   SPI_MISO           integral    8     'b0  
-#   data_to_serialize  integral    8     'b0  
-#   rst_op             integral    1     'b0  
-#   delay              integral    32    'd0  
-# --------------------------------------------
+# *** TEST PASSED - txbyte vs mosi - 29 vectors ran, 29 vectors passed ***
 # 
-# Expected=-----------------------------------------------
-# Name                 Type        Size  Value   
-# -----------------------------------------------
-# tr                   spi_item_c  -     @1644   
-#   i_TX_Byte          integral    8     'b110110
-#   o_RX_Byte          integral    8     'b0     
-#   SPI_MOSI           integral    8     'b110110
-#   SPI_MISO           integral    8     'b0     
-#   data_to_serialize  integral    8     'b0     
-#   rst_op             integral    1     'b0     
-#   delay              integral    32    'd0     
-# -----------------------------------------------
-#  
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(172) @ 11825000: uvm_test_top.m_spi_env.m_scoreboard.cmp [spi_sb_comparator_c] 
 # 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 1965000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @1708     
-#   i_TX_Byte          integral    8     'b0       
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11000010
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
 # 
-# Expected=--------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# tr                   spi_item_c  -     @1684
-#   i_TX_Byte          integral    8     'b0  
-#   o_RX_Byte          integral    8     'b0  
-#   SPI_MOSI           integral    8     'b0  
-#   SPI_MISO           integral    8     'b0  
-#   data_to_serialize  integral    8     'b0  
-#   rst_op             integral    1     'b0  
-#   delay              integral    32    'd0  
-# --------------------------------------------
-#  
+# *** TEST PASSED - miso vs rxbyte - 29 vectors ran, 29 vectors passed ***
 # 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 2325000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @1748     
-#   i_TX_Byte          integral    8     'b0       
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
 # 
-# Expected=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# tr                   spi_item_c  -     @1724     
-#   i_TX_Byte          integral    8     'b11000010
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11000010
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-#  
+# --- UVM Report Summary ---
 # 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 2675000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @1788     
-#   i_TX_Byte          integral    8     'b0       
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b10100011
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-# 
-# Expected=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# tr                   spi_item_c  -     @1764     
-#   i_TX_Byte          integral    8     'b11111111
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 3025000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=--------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# spi_master_out_item  spi_item_c  -     @1828
-#   i_TX_Byte          integral    8     'b0  
-#   o_RX_Byte          integral    8     'b0  
-#   SPI_MOSI           integral    8     'b0  
-#   SPI_MISO           integral    8     'b0  
-#   data_to_serialize  integral    8     'b0  
-#   rst_op             integral    1     'b0  
-#   delay              integral    32    'd0  
-# --------------------------------------------
-# 
-# Expected=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# tr                   spi_item_c  -     @1804     
-#   i_TX_Byte          integral    8     'b10100011
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b10100011
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 3395000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=-----------------------------------------------
-# Name                 Type        Size  Value   
-# -----------------------------------------------
-# spi_master_out_item  spi_item_c  -     @1868   
-#   i_TX_Byte          integral    8     'b0     
-#   o_RX_Byte          integral    8     'b0     
-#   SPI_MOSI           integral    8     'b100111
-#   SPI_MISO           integral    8     'b0     
-#   data_to_serialize  integral    8     'b0     
-#   rst_op             integral    1     'b0     
-#   delay              integral    32    'd0     
-# -----------------------------------------------
-# 
-# Expected=--------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# tr                   spi_item_c  -     @1844
-#   i_TX_Byte          integral    8     'b0  
-#   o_RX_Byte          integral    8     'b0  
-#   SPI_MOSI           integral    8     'b0  
-#   SPI_MISO           integral    8     'b0  
-#   data_to_serialize  integral    8     'b0  
-#   rst_op             integral    1     'b0  
-#   delay              integral    32    'd0  
-# --------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 3765000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @1908     
-#   i_TX_Byte          integral    8     'b0       
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-# 
-# Expected=-----------------------------------------------
-# Name                 Type        Size  Value   
-# -----------------------------------------------
-# tr                   spi_item_c  -     @1884   
-#   i_TX_Byte          integral    8     'b100111
-#   o_RX_Byte          integral    8     'b0     
-#   SPI_MOSI           integral    8     'b100111
-#   SPI_MISO           integral    8     'b0     
-#   data_to_serialize  integral    8     'b0     
-#   rst_op             integral    1     'b0     
-#   delay              integral    32    'd0     
-# -----------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 4155000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=------------------------------------------------
-# Name                 Type        Size  Value    
-# ------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @1948    
-#   i_TX_Byte          integral    8     'b0      
-#   o_RX_Byte          integral    8     'b0      
-#   SPI_MOSI           integral    8     'b1110100
-#   SPI_MISO           integral    8     'b0      
-#   data_to_serialize  integral    8     'b0      
-#   rst_op             integral    1     'b0      
-#   delay              integral    32    'd0      
-# ------------------------------------------------
-# 
-# Expected=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# tr                   spi_item_c  -     @1924     
-#   i_TX_Byte          integral    8     'b11111111
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 4505000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @1988     
-#   i_TX_Byte          integral    8     'b0       
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-# 
-# Expected=------------------------------------------------
-# Name                 Type        Size  Value    
-# ------------------------------------------------
-# tr                   spi_item_c  -     @1964    
-#   i_TX_Byte          integral    8     'b1110100
-#   o_RX_Byte          integral    8     'b0      
-#   SPI_MOSI           integral    8     'b1110100
-#   SPI_MISO           integral    8     'b0      
-#   data_to_serialize  integral    8     'b0      
-#   rst_op             integral    1     'b0      
-#   delay              integral    32    'd0      
-# ------------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 4845000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @2028     
-#   i_TX_Byte          integral    8     'b0       
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b10110111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-# 
-# Expected=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# tr                   spi_item_c  -     @2004     
-#   i_TX_Byte          integral    8     'b11111111
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 5235000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @2068     
-#   i_TX_Byte          integral    8     'b0       
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-# 
-# Expected=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# tr                   spi_item_c  -     @2040     
-#   i_TX_Byte          integral    8     'b10110111
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b10110111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 5605000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=------------------------------------------------
-# Name                 Type        Size  Value    
-# ------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @2108    
-#   i_TX_Byte          integral    8     'b0      
-#   o_RX_Byte          integral    8     'b0      
-#   SPI_MOSI           integral    8     'b1011011
-#   SPI_MISO           integral    8     'b0      
-#   data_to_serialize  integral    8     'b0      
-#   rst_op             integral    1     'b0      
-#   delay              integral    32    'd0      
-# ------------------------------------------------
-# 
-# Expected=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# tr                   spi_item_c  -     @2084     
-#   i_TX_Byte          integral    8     'b11111111
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 5965000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @2148     
-#   i_TX_Byte          integral    8     'b0       
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-# 
-# Expected=------------------------------------------------
-# Name                 Type        Size  Value    
-# ------------------------------------------------
-# tr                   spi_item_c  -     @2124    
-#   i_TX_Byte          integral    8     'b1011011
-#   o_RX_Byte          integral    8     'b0      
-#   SPI_MOSI           integral    8     'b1011011
-#   SPI_MISO           integral    8     'b0      
-#   data_to_serialize  integral    8     'b0      
-#   rst_op             integral    1     'b0      
-#   delay              integral    32    'd0      
-# ------------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 6315000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @2188     
-#   i_TX_Byte          integral    8     'b0       
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b10110011
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-# 
-# Expected=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# tr                   spi_item_c  -     @2164     
-#   i_TX_Byte          integral    8     'b11111111
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 6675000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @2228     
-#   i_TX_Byte          integral    8     'b0       
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-# 
-# Expected=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# tr                   spi_item_c  -     @2204     
-#   i_TX_Byte          integral    8     'b10110011
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b10110011
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 7025000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @2268     
-#   i_TX_Byte          integral    8     'b0       
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b10111010
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-# 
-# Expected=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# tr                   spi_item_c  -     @2244     
-#   i_TX_Byte          integral    8     'b11111111
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 7405000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=--------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# spi_master_out_item  spi_item_c  -     @2308
-#   i_TX_Byte          integral    8     'b0  
-#   o_RX_Byte          integral    8     'b0  
-#   SPI_MOSI           integral    8     'b0  
-#   SPI_MISO           integral    8     'b0  
-#   data_to_serialize  integral    8     'b0  
-#   rst_op             integral    1     'b0  
-#   delay              integral    32    'd0  
-# --------------------------------------------
-# 
-# Expected=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# tr                   spi_item_c  -     @2284     
-#   i_TX_Byte          integral    8     'b10111010
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b10111010
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 7755000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @2348     
-#   i_TX_Byte          integral    8     'b0       
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b10101010
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-# 
-# Expected=--------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# tr                   spi_item_c  -     @2324
-#   i_TX_Byte          integral    8     'b0  
-#   o_RX_Byte          integral    8     'b0  
-#   SPI_MOSI           integral    8     'b0  
-#   SPI_MISO           integral    8     'b0  
-#   data_to_serialize  integral    8     'b0  
-#   rst_op             integral    1     'b0  
-#   delay              integral    32    'd0  
-# --------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 8135000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @2388     
-#   i_TX_Byte          integral    8     'b0       
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-# 
-# Expected=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# tr                   spi_item_c  -     @2364     
-#   i_TX_Byte          integral    8     'b10101010
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b10101010
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 8525000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=------------------------------------------------
-# Name                 Type        Size  Value    
-# ------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @2428    
-#   i_TX_Byte          integral    8     'b0      
-#   o_RX_Byte          integral    8     'b0      
-#   SPI_MOSI           integral    8     'b1101011
-#   SPI_MISO           integral    8     'b0      
-#   data_to_serialize  integral    8     'b0      
-#   rst_op             integral    1     'b0      
-#   delay              integral    32    'd0      
-# ------------------------------------------------
-# 
-# Expected=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# tr                   spi_item_c  -     @2404     
-#   i_TX_Byte          integral    8     'b11111111
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 8885000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @2468     
-#   i_TX_Byte          integral    8     'b0       
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-# 
-# Expected=------------------------------------------------
-# Name                 Type        Size  Value    
-# ------------------------------------------------
-# tr                   spi_item_c  -     @2444    
-#   i_TX_Byte          integral    8     'b1101011
-#   o_RX_Byte          integral    8     'b0      
-#   SPI_MOSI           integral    8     'b1101011
-#   SPI_MISO           integral    8     'b0      
-#   data_to_serialize  integral    8     'b0      
-#   rst_op             integral    1     'b0      
-#   delay              integral    32    'd0      
-# ------------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 9235000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @2508     
-#   i_TX_Byte          integral    8     'b0       
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111000
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-# 
-# Expected=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# tr                   spi_item_c  -     @2484     
-#   i_TX_Byte          integral    8     'b11111111
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 9605000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @2548     
-#   i_TX_Byte          integral    8     'b0       
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-# 
-# Expected=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# tr                   spi_item_c  -     @2524     
-#   i_TX_Byte          integral    8     'b11111000
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111000
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 9995000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @2588     
-#   i_TX_Byte          integral    8     'b0       
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b10111011
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-# 
-# Expected=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# tr                   spi_item_c  -     @2564     
-#   i_TX_Byte          integral    8     'b11111111
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 10385000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @2628     
-#   i_TX_Byte          integral    8     'b0       
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-# 
-# Expected=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# tr                   spi_item_c  -     @2604     
-#   i_TX_Byte          integral    8     'b10111011
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b10111011
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 10765000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# spi_master_out_item  spi_item_c  -     @2668     
-#   i_TX_Byte          integral    8     'b0       
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11000000
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-# 
-# Expected=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# tr                   spi_item_c  -     @2644     
-#   i_TX_Byte          integral    8     'b11111111
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11111111
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-#  
-# 
-# UVM_ERROR D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(126) @ 11155000: uvm_test_top.m_spi_env.m_scoreboard.cmp [ERROR] 
-# mosi
-# Actual=--------------------------------------------
-# Name                 Type        Size  Value
-# --------------------------------------------
-# spi_master_out_item  spi_item_c  -     @2708
-#   i_TX_Byte          integral    8     'b0  
-#   o_RX_Byte          integral    8     'b0  
-#   SPI_MOSI           integral    8     'b0  
-#   SPI_MISO           integral    8     'b0  
-#   data_to_serialize  integral    8     'b0  
-#   rst_op             integral    1     'b0  
-#   delay              integral    32    'd0  
-# --------------------------------------------
-# 
-# Expected=-------------------------------------------------
-# Name                 Type        Size  Value     
-# -------------------------------------------------
-# tr                   spi_item_c  -     @2684     
-#   i_TX_Byte          integral    8     'b11000000
-#   o_RX_Byte          integral    8     'b0       
-#   SPI_MOSI           integral    8     'b11000000
-#   SPI_MISO           integral    8     'b0       
-#   data_to_serialize  integral    8     'b0       
-#   rst_op             integral    1     'b0       
-#   delay              integral    32    'd0       
-# -------------------------------------------------
-#  
-# 
-# Break key hit
-# Break in Module spi_tb_top at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_tb_top.sv line 69
+# ** Report counts by severity
+# UVM_INFO :   45
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [PH_JUMP]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [rst]     4
+# [spi_sb_comparator_c]     2
+# [test]     1
+# [uvm_test_top]     2
+# [uvm_test_top.m_spi_env.m_spi_controller_agent.m_seqr]     1
+# [uvm_test_top.m_spi_env.m_spi_master_agent.m_monitor]    29
+# [uvm_test_top.m_spi_env.m_spi_master_agent.m_seqr]     1
+# ** Note: $finish    : C:/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 11825 ns  Iteration: 54  Instance: /spi_tb_top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at C:/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430

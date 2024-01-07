@@ -18,7 +18,7 @@ logic    [7:0]    o_RX_Byte;         // [MASTER] Byte received on MISO  || [SLAV
 
 // Clocking Block: mon_cb
 //
-clocking mon_cb @(negedge i_Clk);
+clocking mon_cb @(negedge i_Clk or negedge i_Rst_L);
   input 		      i_TX_Byte;
   input           i_TX_DV;    
   input           o_TX_Ready; 

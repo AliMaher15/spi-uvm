@@ -113,7 +113,7 @@ function void spi_master_monitor_c::cleanup();
   // Clear all
   spi_item_c    cleanup_item = spi_item_c::type_id::create("cleanup_item");
   cleanup_item.rst_op = 1;
+  `uvm_info(get_full_name(), "RST Operation, writing to Scoreboard", UVM_DEBUG)
   spi_master_mon_inp_ap.write(cleanup_item);
   spi_master_mon_out_ap.write(cleanup_item);
-
 endfunction : cleanup

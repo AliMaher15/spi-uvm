@@ -104,14 +104,11 @@ task spi_sb_comparator_c::compare_mosi(input spi_item_c exp_mosi  , spi_item_c o
     forever begin 
         `uvm_info("sb_comparator run task", "WAITING for expected mosi output", UVM_DEBUG)
         mosi_expfifo.get(exp_mosi); 
-        if(exp_mosi.rst_op) begin
-            `uvm_info("sb_comparator compare_mosi", "flushing mosi_expfifo", UVM_FULL)
-            mosi_expfifo.flush();
-        end
         `uvm_info("sb_comparator run task", "WAITING for actual mosi output"  , UVM_DEBUG)
         mosi_outfifo.get(out_mosi); 
-        if(out_mosi.rst_op) begin
-            `uvm_info("sb_comparator compare_mosi", "flushing mosi_outfifo", UVM_FULL)
+        if(out_mosi.rst_op | exp_mosi.rst_op) begin
+            `uvm_info("sb_comparator compare_mosi", "flushing mosi_fifo", UVM_FULL)
+            mosi_expfifo.flush();
             mosi_outfifo.flush();
             continue;
         end
@@ -135,15 +132,12 @@ endtask: compare_mosi
 task spi_sb_comparator_c::compare_rxbyte(input spi_item_c exp_rxbyte, spi_item_c out_rxbyte);
     forever begin 
         `uvm_info("sb_comparator run task", "WAITING for expected rx_byte output", UVM_DEBUG)
-        rxbyte_expfifo.get(exp_rxbyte); 
-        if(exp_rxbyte.rst_op) begin
-            `uvm_info("sb_comparator compare_rxbyte", "flushing rxbyte_expfifo", UVM_FULL)
-            rxbyte_expfifo.flush();
-        end
+        rxbyte_expfifo.get(exp_rxbyte);
         `uvm_info("sb_comparator run task", "WAITING for actual rx_byte output"  , UVM_DEBUG)
         rxbyte_outfifo.get(out_rxbyte); 
-        if(out_rxbyte.rst_op) begin
-            `uvm_info("sb_comparator compare_rxbyte", "flushing rxbyte_outfifo", UVM_FULL)
+        if(out_rxbyte.rst_op | exp_rxbyte.rst_op) begin
+            `uvm_info("sb_comparator compare_rxbyte", "flushing rxbyte_fifo", UVM_FULL)
+            rxbyte_expfifo.flush();
             rxbyte_outfifo.flush();
             continue;
         end
