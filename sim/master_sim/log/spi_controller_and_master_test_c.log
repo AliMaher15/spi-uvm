@@ -1,5 +1,13 @@
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/Ali/Courses/Verification-Projects/SPI-uvm/sim/master_sim/spi_master_sim.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/Ali/Courses/Verification-Projects/SPI-uvm/sim/master_sim/spi_master_sim.mpf).  File can not be renamed.
+# End time: 03:55:29 on Jan 12,2024, Elapsed time: 0:00:15
+# Errors: 2, Warnings: 2
 # vsim top_opt -c -assertdebug -debugDB -fsmdebug -coverage "+UVM_TESTNAME=spi_controller_and_master_test_c" 
-# Start time: 03:24:53 on Jan 06,2024
+# Start time: 03:55:29 on Jan 12,2024
 # Loading sv_std.std
 # Loading work.spi_master_intf(fast)
 # Loading work.spi_controller_intf(fast)
@@ -19,9 +27,9 @@
 # Loading work.spi_controller_intf(fast__2)
 # Loading work.SPI_Master(fast)
 # ** Warning: (vsim-3764) Stand-alone call to function 'read_by_name' treated as implicit void cast.
-#    Time: 0 ps  Iteration: 0  Region: /spi_tb_pkg::rst_driver_c File: D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/rst_driver_c.svh Line: 33
+#    Time: 0 ps  Iteration: 0  Region: /spi_tb_pkg::rst_driver_c File: D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb//rst_driver_c.svh Line: 33
 # Loading C:/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
-# ** Note: (vsim-8900) Creating design debug database vsim.dbg.
+# ** Note: (vsim-8716) Reusing existing debug database vsim.dbg.
 # 1
 # ----------------------------------------------------------------
 # UVM-1.1d
@@ -183,20 +191,20 @@
 # 
 ####
 # 
-# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/test_lib//spi_controller_and_master_test_c.svh(32) @ 0: uvm_test_top [uvm_test_top] Starting test
-# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/rst_driver_c.svh(39) @ 0: uvm_test_top.m_rst_drv [rst] Going down.
-# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/rst_driver_c.svh(43) @ 72012: uvm_test_top.m_rst_drv [rst] Going up.
-# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/test_lib//spi_controller_and_master_test_c.svh(40) @ 23265000: uvm_test_top [uvm_test_top] Ending test
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 23265000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_checkers/spi_sb_comparator_c.svh(156) @ 23265000: uvm_test_top.m_spi_env.m_scoreboard.cmp [spi_sb_comparator_c] 
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_controller_and_master_test_c.svh(32) @ 0: uvm_test_top [uvm_test_top] Starting test
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb//rst_driver_c.svh(39) @ 0: uvm_test_top.m_rst_drv [rst] Going down.
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb//rst_driver_c.svh(43) @ 72012: uvm_test_top.m_rst_drv [rst] Going up.
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_controller_and_master_test_c.svh(40) @ 12135000: uvm_test_top [uvm_test_top] Ending test
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 12135000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb//spi_checkers/spi_sb_comparator_c.svh(164) @ 12135000: uvm_test_top.m_spi_env.m_scoreboard.cmp [spi_sb_comparator_c] 
 # 
 # 
-# *** TEST PASSED - txbyte vs mosi - 61 vectors ran, 61 vectors passed ***
+# *** TEST PASSED - txbyte vs mosi - 31 vectors ran, 31 vectors passed ***
 # 
-# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_checkers/spi_sb_comparator_c.svh(164) @ 23265000: uvm_test_top.m_spi_env.m_scoreboard.cmp [spi_sb_comparator_c] 
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb//spi_checkers/spi_sb_comparator_c.svh(172) @ 12135000: uvm_test_top.m_spi_env.m_scoreboard.cmp [spi_sb_comparator_c] 
 # 
 # 
-# *** TEST PASSED - miso vs rxbyte - 61 vectors ran, 61 vectors passed ***
+# *** TEST PASSED - miso vs rxbyte - 31 vectors ran, 31 vectors passed ***
 # 
 # 
 # --- UVM Report Summary ---
@@ -214,6 +222,6 @@
 # [spi_sb_comparator_c]     2
 # [uvm_test_top]     2
 # ** Note: $finish    : C:/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 23265 ns  Iteration: 54  Instance: /spi_tb_top
+#    Time: 12135 ns  Iteration: 54  Instance: /spi_tb_top
 # 1
 # Break in Task uvm_pkg/uvm_root::run_test at C:/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430

@@ -12,8 +12,8 @@ Name                 File(Line)                   Failure      Pass     Vacuous 
                                                   Count        Count    Count      Count      Count       Count  Count          
 --------------------------------------------------------------------------------------------------------------------------------
 /spi_tb_top/SPI_MASTER_IF/Assert_spi_master_rst_interface_signals
-                     D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_master_agent/spi_master_intf.sv(24)
-                                                        0          2          0          0          2          0           2 off
+                     D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent/spi_master_intf.sv(43)
+                                                        0          6          0          0          6          0           4 off
 
 =================================================================================
 === Instance: /spi_tb_top/SPI_CONT_IF
@@ -27,14 +27,14 @@ Name                 File(Line)                   Failure      Pass     Vacuous 
                                                   Count        Count    Count      Count      Count       Count  Count          
 --------------------------------------------------------------------------------------------------------------------------------
 /spi_tb_top/SPI_CONT_IF/Assert_spi_cont_rst_check
-                     D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_controller_agent/spi_controller_intf.sv(28)
-                                                        0          2          0          0          2          0           2 off
+                     D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_controller_agent/spi_controller_intf.sv(54)
+                                                        0          6          0          0          6          0           4 off
 /spi_tb_top/SPI_CONT_IF/Assert_spi_cont_data_valid_pulse_high_one_cycle_rx
-                     D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_controller_agent/spi_controller_intf.sv(32)
-                                                        0        122       4485         14       4621          0           2 off
+                     D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_controller_agent/spi_controller_intf.sv(58)
+                                                        0        122       4660         43       4825          0           4 off
 /spi_tb_top/SPI_CONT_IF/Assert_spi_cont_data_valid_pulse_high_one_cycle_tx
-                     D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_controller_agent/spi_controller_intf.sv(35)
-                                                        0        122       4485         14       4621          0           2 off
+                     D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_controller_agent/spi_controller_intf.sv(61)
+                                                        0        123       4659         43       4825          0           4 off
 
 =================================================================================
 === Instance: /spi_seq_pkg
@@ -48,11 +48,26 @@ Name                 File(Line)                   Failure      Pass     Vacuous 
                                                   Count        Count    Count      Count      Count       Count  Count          
 --------------------------------------------------------------------------------------------------------------------------------
 /spi_seq_pkg/spi_general_seq_c/body/Randomize_spi_item_with_no_constr
-                     D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/seq_lib//spi_general_seq_c.svh(31)
-                                                        0        150          0          0        150          0           0 off
+                     D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/seq_lib//spi_general_seq_c.svh(31)
+                                                        0        106          0          0        106          0           0 off
 /spi_seq_pkg/spi_gnrl_constr_seq_c/body/Randomize_spi_item_with_data_constr
-                     D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/seq_lib//spi_gnrl_constr_seq_c.svh(32)
-                                                        0         33          0          0         33          0           0 off
+                     D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/seq_lib//spi_gnrl_constr_seq_c.svh(32)
+                                                        0        112          0          0        112          0           0 off
+
+=================================================================================
+=== Instance: /spi_test_pkg
+=== Design Unit: work.spi_test_pkg
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       1         1         0   100.00%
+--------------------------------------------------------------------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass     Vacuous    Disable    Attempt     Active Peak Active ATV
+                                                  Count        Count    Count      Count      Count       Count  Count          
+--------------------------------------------------------------------------------------------------------------------------------
+/spi_test_pkg/active_reset_test_c/main_phase/Randomize_reset_delay_time
+                     D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//active_reset_test_c.svh(26)
+                                                        0          1          0          0          1          0           0 off
 
 
 ASSERTION RESULTS:
@@ -61,23 +76,26 @@ Name                 File(Line)                   Failure      Pass     Vacuous 
                                                   Count        Count    Count      Count      Count       Count  Count          
 --------------------------------------------------------------------------------------------------------------------------------
 /spi_tb_top/SPI_MASTER_IF/Assert_spi_master_rst_interface_signals
-                     D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_master_agent/spi_master_intf.sv(24)
-                                                        0          2          0          0          2          0           2 off
+                     D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent/spi_master_intf.sv(43)
+                                                        0          6          0          0          6          0           4 off
 /spi_tb_top/SPI_CONT_IF/Assert_spi_cont_rst_check
-                     D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_controller_agent/spi_controller_intf.sv(28)
-                                                        0          2          0          0          2          0           2 off
+                     D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_controller_agent/spi_controller_intf.sv(54)
+                                                        0          6          0          0          6          0           4 off
 /spi_tb_top/SPI_CONT_IF/Assert_spi_cont_data_valid_pulse_high_one_cycle_rx
-                     D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_controller_agent/spi_controller_intf.sv(32)
-                                                        0        122       4485         14       4621          0           2 off
+                     D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_controller_agent/spi_controller_intf.sv(58)
+                                                        0        122       4660         43       4825          0           4 off
 /spi_tb_top/SPI_CONT_IF/Assert_spi_cont_data_valid_pulse_high_one_cycle_tx
-                     D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/spi_controller_agent/spi_controller_intf.sv(35)
-                                                        0        122       4485         14       4621          0           2 off
+                     D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_controller_agent/spi_controller_intf.sv(61)
+                                                        0        123       4659         43       4825          0           4 off
 /spi_seq_pkg/spi_general_seq_c/body/Randomize_spi_item_with_no_constr
-                     D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/seq_lib//spi_general_seq_c.svh(31)
-                                                        0        150          0          0        150          0           0 off
+                     D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/seq_lib//spi_general_seq_c.svh(31)
+                                                        0        106          0          0        106          0           0 off
 /spi_seq_pkg/spi_gnrl_constr_seq_c/body/Randomize_spi_item_with_data_constr
-                     D:/Ali/Courses/Verification-Projects/SPI-uvm/tb/seq_lib//spi_gnrl_constr_seq_c.svh(32)
-                                                        0         33          0          0         33          0           0 off
+                     D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/seq_lib//spi_gnrl_constr_seq_c.svh(32)
+                                                        0        112          0          0        112          0           0 off
+/spi_test_pkg/active_reset_test_c/main_phase/Randomize_reset_delay_time
+                     D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//active_reset_test_c.svh(26)
+                                                        0          1          0          0          1          0           0 off
 
 Total Coverage By Instance (filtered view): 100.00%
 

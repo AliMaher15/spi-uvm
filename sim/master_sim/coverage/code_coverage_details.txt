@@ -1,0 +1,236 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /spi_tb_top/spi_master_dut
+=== Design Unit: work.SPI_Master
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        27        26         1    96.29%
+
+================================Branch Details================================
+
+Branch Coverage for instance /spi_tb_top/spi_master_dut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File D:/Ali/Courses/Verification-Projects/SPI-uvm/rtl/SPI_Master.v
+------------------------------------IF Branch------------------------------------
+    90                                      4313     Count coming in to IF
+    90              1                         12     
+    99              1                       4301     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    106                                     4301     Count coming in to IF
+    106             1                        123     
+    111             1                       3932     
+    134             1                        246     
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    115                                     3932     Count coming in to IF
+    115             1                        983     
+    122             1                        983     
+    129             1                       1966     
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    148                                      501     Count coming in to IF
+    148             1                         12     
+    153             1                        489     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    156                                      489     Count coming in to IF
+    156             1                        123     
+                                             366     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    168                                     4198     Count coming in to IF
+    168             1                         12     
+    173             1                       4186     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    176                                     4186     Count coming in to IF
+    176             1                        127     
+    181             1                    ***0***     
+    186             1                        983     
+                                            3076     All False Count
+Branch totals: 3 hits of 4 branches = 75.00%
+
+------------------------------------IF Branch------------------------------------
+    198                                     4190     Count coming in to IF
+    198             1                         12     
+    204             1                       4178     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    210                                     4178     Count coming in to IF
+    210             1                        242     
+    214             1                        982     
+                                            2954     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    218                                      982     Count coming in to IF
+    218             1                        122     
+                                             860     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    230                                     3947     Count coming in to IF
+    230             1                         12     
+    234             1                       3935     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                      12         6         6    50.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /spi_tb_top/spi_master_dut --
+
+  File D:/Ali/Courses/Verification-Projects/SPI-uvm/rtl/SPI_Master.v
+----------------Focused Condition View-------------------
+Line       111 Item    1  (r_SPI_Clk_Edges > 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       115 Item    1  (r_SPI_Clk_Count == ((2 * 2) - 1))
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       122 Item    1  (r_SPI_Clk_Count == (2 - 1))
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       181 Item    1  (r_TX_DV & ~w_CPHA)
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+     r_TX_DV         N  No hits                  Hit '_0' and '_1'
+      w_CPHA         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  r_TX_DV_0             ~w_CPHA                       
+  Row   2:    ***0***  r_TX_DV_1             ~w_CPHA                       
+  Row   3:    ***0***  w_CPHA_0              r_TX_DV                       
+  Row   4:          4  w_CPHA_1              r_TX_DV                       
+
+-----------Focused Condition View (Bimodal)--------------
+Line       186 Item    1  ((r_Leading_Edge & w_CPHA) | (r_Trailing_Edge & ~w_CPHA))
+Condition totals: 1 of 3 input terms covered = 33.33%
+
+         Input Term   Covered  Reason for no coverage                  Hint
+        -----------  --------  --------------------------------------  --------------
+     r_Leading_Edge         Y
+             w_CPHA         N  '_1' hit but '_0' not hit              Hit '_0' for output ->0 or ->1
+    r_Trailing_Edge         N  No hits                                Hit '_0' and '_1' for different outputs
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)                                         
+
+---------  ----------  ----------  --------------------  -------------------------                                        
+ Row   1:           4           0  r_Leading_Edge_0      w_CPHA                                                           
+ Row   2:           0           4  r_Leading_Edge_1      w_CPHA                                                           
+ Row   3:           0           0  w_CPHA_0              (~(r_Trailing_Edge & ~w_CPHA) && r_Leading_Edge), r_Trailing_Edge
+ Row   4:           4           4  w_CPHA_1              r_Leading_Edge, (~(r_Leading_Edge & w_CPHA) && r_Trailing_Edge)  
+ Row   5:           0           0  r_Trailing_Edge_0     ~w_CPHA                                                          
+ Row   6:           0           0  r_Trailing_Edge_1     ~w_CPHA                                                          
+
+-----------Focused Condition View (Bimodal)--------------
+Line       214 Item    1  ((r_Leading_Edge & ~w_CPHA) | (r_Trailing_Edge & w_CPHA))
+Condition totals: 1 of 3 input terms covered = 33.33%
+
+         Input Term   Covered  Reason for no coverage                  Hint
+        -----------  --------  --------------------------------------  --------------
+     r_Leading_Edge         N  No hits                                Hit '_0' and '_1' for different outputs
+             w_CPHA         N  '_1' hit but '_0' not hit              Hit '_0' for output ->0 or ->1
+    r_Trailing_Edge         Y
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)                                        
+
+---------  ----------  ----------  --------------------  -------------------------                                       
+ Row   1:           0           0  r_Leading_Edge_0      ~w_CPHA                                                         
+ Row   2:           0           0  r_Leading_Edge_1      ~w_CPHA                                                         
+ Row   3:           0           0  w_CPHA_0              r_Leading_Edge, (~(r_Leading_Edge & ~w_CPHA) && r_Trailing_Edge)
+ Row   4:           4           4  w_CPHA_1              (~(r_Trailing_Edge & w_CPHA) && r_Leading_Edge), r_Trailing_Edge
+ Row   5:           4           0  r_Trailing_Edge_0     w_CPHA                                                          
+ Row   6:           0           4  r_Trailing_Edge_1     w_CPHA                                                          
+
+----------------Focused Condition View-------------------
+Line       218 Item    1  (r_RX_Bit_Count == 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      47        45         2    95.74%
+
+================================Statement Details================================
+
+Statement Coverage for instance /spi_tb_top/spi_master_dut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File D:/Ali/Courses/Verification-Projects/SPI-uvm/rtl/SPI_Master.v
+    88              1                       4313     
+    92              1                         12     
+    93              1                         12     
+    94              1                         12     
+    95              1                         12     
+    96              1                         12     
+    97              1                         12     
+    103             1                       4301     
+    104             1                       4301     
+    108             1                        123     
+    109             1                        123     
+    113             1                       3932     
+    117             1                        983     
+    118             1                        983     
+    119             1                        983     
+    120             1                        983     
+    124             1                        983     
+    125             1                        983     
+    126             1                        983     
+    127             1                        983     
+    131             1                       1966     
+    136             1                        246     
+    146             1                        501     
+    150             1                         12     
+    151             1                         12     
+    155             1                        489     
+    158             1                        123     
+    166             1                       4198     
+    170             1                         12     
+    171             1                         12     
+    178             1                        127     
+    183             1                    ***0***     
+    184             1                    ***0***     
+    188             1                        983     
+    189             1                        983     
+    196             1                       4190     
+    200             1                         12     
+    201             1                         12     
+    202             1                         12     
+    208             1                       4178     
+    212             1                        242     
+    216             1                        982     
+    217             1                        982     
+    220             1                        122     
+    228             1                       3947     
+    232             1                         12     
+    236             1                       3935     
+
+
+Total Coverage By Instance (filtered view): 80.68%
+

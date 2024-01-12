@@ -24,20 +24,22 @@ vopt spi_tb_top  -o top_opt    -debugdb      +acc        +cover=sbecf
 # Simulation of Tests
 #***************************************************#
 
+do    scripts/spi_controller_only_test.do
+do    scripts/spi_controller_and_master_test.do
+do    scripts/idle_reset_test.do
 do    scripts/active_reset_test.do
-
 
 #***************************************************#
 # save the coverage in text files
 #***************************************************#
-#vcover merge  coverage/spi_cov.ucdb \
-#              coverage/spi_controller_only_test_c.ucdb   \
-#              coverage/spi_controller_and_master_test_c.ucdb  \
-#              coverage/idle_reset_test_c.ucdb  \
-#              coverage/active_reset_test_c.ucdb  
+vcover merge  coverage/spi_cov.ucdb \
+              coverage/spi_controller_only_test_c.ucdb   \
+              coverage/spi_controller_and_master_test_c.ucdb  \
+              coverage/idle_reset_test_c.ucdb  \
+              coverage/active_reset_test_c.ucdb  
 
-#do    scripts/vcover.do
+do    scripts/vcover.do
 
 
 
-#quit -sim
+quit -sim

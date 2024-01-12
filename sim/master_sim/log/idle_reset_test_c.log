@@ -1,7 +1,13 @@
-# End time: 22:13:30 on Jan 06,2024, Elapsed time: 0:05:43
-# Errors: 0, Warnings: 1
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/Ali/Courses/Verification-Projects/SPI-uvm/sim/master_sim/spi_master_sim.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/Ali/Courses/Verification-Projects/SPI-uvm/sim/master_sim/spi_master_sim.mpf).  File can not be renamed.
+# End time: 03:55:44 on Jan 12,2024, Elapsed time: 0:00:15
+# Errors: 2, Warnings: 2
 # vsim top_opt -c -assertdebug -debugDB -fsmdebug -coverage "+UVM_TESTNAME=idle_reset_test_c" 
-# Start time: 22:13:31 on Jan 06,2024
+# Start time: 03:55:44 on Jan 12,2024
 # Loading sv_std.std
 # Loading work.spi_master_intf(fast)
 # Loading work.spi_controller_intf(fast)
@@ -21,9 +27,9 @@
 # Loading work.spi_controller_intf(fast__2)
 # Loading work.SPI_Master(fast)
 # ** Warning: (vsim-3764) Stand-alone call to function 'read_by_name' treated as implicit void cast.
-#    Time: 0 ps  Iteration: 0  Region: /spi_tb_pkg::rst_driver_c File: D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/rst_driver_c.svh Line: 33
+#    Time: 0 ps  Iteration: 0  Region: /spi_tb_pkg::rst_driver_c File: D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb//rst_driver_c.svh Line: 33
 # Loading C:/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
-# ** Note: (vsim-8900) Creating design debug database vsim.dbg.
+# ** Note: (vsim-8716) Reusing existing debug database vsim.dbg.
 # 1
 # ----------------------------------------------------------------
 # UVM-1.1d
@@ -186,22 +192,22 @@
 ####
 # 
 # UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_controller_and_master_test_c.svh(32) @ 0: uvm_test_top [uvm_test_top] Starting test
-# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/rst_driver_c.svh(39) @ 0: uvm_test_top.m_rst_drv [rst] Going down.
-# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/rst_driver_c.svh(43) @ 72012: uvm_test_top.m_rst_drv [rst] Going up.
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb//rst_driver_c.svh(39) @ 0: uvm_test_top.m_rst_drv [rst] Going down.
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb//rst_driver_c.svh(43) @ 72012: uvm_test_top.m_rst_drv [rst] Going up.
 # UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//idle_reset_test_c.svh(19) @ 72012: uvm_test_top [test] Hitting Reset!!!
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_phase.svh(1311) @ 72012: reporter [PH_JUMP] phase shutdown (schedule uvm_sched, domain uvm) is jumping to phase pre_reset
 # UVM_INFO @ 72012: uvm_test_top.m_spi_env.m_spi_master_agent.m_seqr [uvm_test_top.m_spi_env.m_spi_master_agent.m_seqr] Sequences stopped.  Removing request from sequencer fifo
 # UVM_INFO @ 72012: uvm_test_top.m_spi_env.m_spi_controller_agent.m_seqr [uvm_test_top.m_spi_env.m_spi_controller_agent.m_seqr] Sequences stopped.  Removing request from sequencer fifo
-# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/rst_driver_c.svh(39) @ 72012: uvm_test_top.m_rst_drv [rst] Going down.
-# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/rst_driver_c.svh(43) @ 144024: uvm_test_top.m_rst_drv [rst] Going up.
-# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_controller_and_master_test_c.svh(40) @ 12125000: uvm_test_top [uvm_test_top] Ending test
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 12125000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(170) @ 12125000: uvm_test_top.m_spi_env.m_scoreboard.cmp [spi_sb_comparator_c] 
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb//rst_driver_c.svh(39) @ 72012: uvm_test_top.m_rst_drv [rst] Going down.
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb//rst_driver_c.svh(43) @ 144024: uvm_test_top.m_rst_drv [rst] Going up.
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_controller_and_master_test_c.svh(40) @ 11815000: uvm_test_top [uvm_test_top] Ending test
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 11815000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb//spi_checkers/spi_sb_comparator_c.svh(164) @ 11815000: uvm_test_top.m_spi_env.m_scoreboard.cmp [spi_sb_comparator_c] 
 # 
 # 
 # *** TEST PASSED - txbyte vs mosi - 30 vectors ran, 30 vectors passed ***
 # 
-# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/spi_sb_comparator_c.svh(178) @ 12125000: uvm_test_top.m_spi_env.m_scoreboard.cmp [spi_sb_comparator_c] 
+# UVM_INFO D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb//spi_checkers/spi_sb_comparator_c.svh(172) @ 11815000: uvm_test_top.m_spi_env.m_scoreboard.cmp [spi_sb_comparator_c] 
 # 
 # 
 # *** TEST PASSED - miso vs rxbyte - 30 vectors ran, 30 vectors passed ***
@@ -226,6 +232,6 @@
 # [uvm_test_top.m_spi_env.m_spi_controller_agent.m_seqr]     1
 # [uvm_test_top.m_spi_env.m_spi_master_agent.m_seqr]     1
 # ** Note: $finish    : C:/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 12125 ns  Iteration: 54  Instance: /spi_tb_top
+#    Time: 11815 ns  Iteration: 54  Instance: /spi_tb_top
 # 1
 # Break in Task uvm_pkg/uvm_root::run_test at C:/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430

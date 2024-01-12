@@ -1,0 +1,15 @@
+Coverage Report Summary Data by instance
+
+=================================================================================
+=== Instance: /spi_tb_top/spi_master_dut
+=== Design Unit: work.SPI_Master
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        27        26         1    96.29%
+    Conditions                      12         6         6    50.00%
+    Statements                      47        45         2    95.74%
+
+
+Total Coverage By Instance (filtered view): 80.68%
+

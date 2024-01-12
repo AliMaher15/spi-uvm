@@ -1,17 +1,160 @@
 # D:/Ali/Courses/Verification-Projects/SPI-uvm
 # QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 12:54:42 on Jan 07,2024
+# Start time: 03:54:37 on Jan 12,2024
 # vlog -reportprogress 300 D:/Ali/Courses/Verification-Projects/SPI-uvm/rtl/SPI_Master.v "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/rtl/" 
 # -- Compiling module SPI_Master
 # 
 # Top level modules:
 # 	SPI_Master
-# End time: 12:54:42 on Jan 07,2024, Elapsed time: 0:00:00
+# End time: 03:54:37 on Jan 12,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+# D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 03:54:37 on Jan 12,2024
+# vlog -reportprogress 300 D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/rst_intf.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_global_params_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_item/spi_item_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent/spi_master_agent_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent/spi_master_intf.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_controller_agent/spi_controller_agent_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_controller_agent/spi_controller_intf.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_tb_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/seq_lib/spi_seq_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_tb_top.sv "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent/" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_controller_agent/" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_item/" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/seq_lib/" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/" "+define+def_spi_CLK_PERIOD=10" 
+# -- Compiling interface rst_intf
+# -- Compiling package spi_global_params_pkg
+# -- Compiling package spi_item_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_item/spi_item_pkg.sv(4): Using implicit +incdir+C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling package spi_master_agent_pkg
+# -- Importing package spi_item_pkg
+# -- Compiling interface spi_master_intf
+# -- Compiling package spi_controller_agent_pkg
+# -- Compiling interface spi_controller_intf
+# -- Compiling package spi_tb_pkg
+# -- Importing package spi_master_agent_pkg
+# -- Importing package spi_controller_agent_pkg
+# -- Importing package spi_global_params_pkg
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_tb_pkg.sv(13)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb//spi_checkers/spi_coverage_c.svh(66): Failed to find the name 'write_spi_master_mon_in' in scope 'spi_coverage_c' at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb//spi_checkers/spi_coverage_c.svh(5).
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_tb_pkg.sv(13)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb//spi_checkers/spi_coverage_c.svh(66): Extern function write_spi_master_mon_in declared in spi_coverage_c but out-of-body declaration must be in the same scope as the class ('spi_tb_pkg').
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_tb_pkg.sv(13)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb//spi_checkers/spi_coverage_c.svh(73): Failed to find the name 'write_spi_cont_mon_in' in scope 'spi_coverage_c' at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb//spi_checkers/spi_coverage_c.svh(5).
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_tb_pkg.sv(13)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb//spi_checkers/spi_coverage_c.svh(73): Extern function write_spi_cont_mon_in declared in spi_coverage_c but out-of-body declaration must be in the same scope as the class ('spi_tb_pkg').
+# ** Error (suppressible): ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_tb_pkg.sv(13)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb//spi_checkers/spi_coverage_c.svh(73): (vlog-2388) 't' already declared in this scope (spi_coverage_c) at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb//spi_checkers/spi_coverage_c.svh(66).
+# -- Compiling package spi_seq_pkg
+# ** Error: D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/seq_lib/spi_seq_pkg.sv(7): (vlog-13006) Could not find the package (spi_tb_pkg).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/seq_lib/spi_seq_pkg.sv(10)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/seq_lib//spi_base_seq_c.svh(7): Invalid type 'spi_env_cfg_c'. Please check the type of the variable 'm_cfg'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/seq_lib/spi_seq_pkg.sv(10)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/seq_lib//spi_base_seq_c.svh(15): (vlog-2730) Undefined variable: 'm_cfg'.
+# -- Compiling package spi_test_pkg
+# ** Error: D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(10): (vlog-13006) Could not find the package (spi_seq_pkg).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# ** Error: D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(11): (vlog-13006) Could not find the package (spi_tb_pkg).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(13)
+# ** while parsing macro expansion: 'uvm_declare_p_sequencer' starting at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_base_vseq_c.svh(8)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_base_vseq_c.svh(8): Invalid type 'spi_vsequencer_c'. Please check the type of the variable 'p_sequencer'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(13)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_base_vseq_c.svh(10): Invalid type 'spi_env_cfg_c'. Please check the type of the variable 'm_cfg'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(13)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_base_vseq_c.svh(22): (vlog-2730) Undefined variable: 'm_cfg'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(13)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_base_vseq_c.svh(30): (vlog-2400) Identifier ('spi_base_seq_c') found where a type or type identifier is required.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(14)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_base_test_c.svh(8): Invalid type 'rst_driver_c'. Please check the type of the variable 'm_rst_drv'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(14)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_base_test_c.svh(17): Invalid type 'spi_env_cfg_c'. Please check the type of the variable 'm_spi_env_cfg'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(14)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_base_test_c.svh(18): Invalid type 'spi_env_c'. Please check the type of the variable 'm_spi_env'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(14)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_base_test_c.svh(46): (vlog-2730) Undefined variable: 'm_spi_env_cfg'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(14)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_base_test_c.svh(46): (vlog-2164) Class or package 'spi_env_cfg_c' not found.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(14)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_base_test_c.svh(46): (vlog-2730) Undefined variable: 'spi_env_cfg_c'.
+# ** Error: (vlog-13069) ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(14)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_base_test_c.svh(46): near "::": syntax error, unexpected ::, expecting ';'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(14)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_base_test_c.svh(73): (vlog-2730) Undefined variable: 'm_spi_env'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(14)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_base_test_c.svh(73): (vlog-2164) Class or package 'spi_env_c' not found.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(14)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_base_test_c.svh(73): (vlog-2730) Undefined variable: 'spi_env_c'.
+# ** Error: (vlog-13069) ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(14)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_base_test_c.svh(73): near "::": syntax error, unexpected ::, expecting ';'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(14)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_base_test_c.svh(76): (vlog-2730) Undefined variable: 'm_rst_drv'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(14)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_base_test_c.svh(76): (vlog-2164) Class or package 'rst_driver_c' not found.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(14)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_base_test_c.svh(76): (vlog-2730) Undefined variable: 'rst_driver_c'.
+# ** Error: (vlog-13069) ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(14)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_base_test_c.svh(76): near "::": syntax error, unexpected ::, expecting ';'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(14)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_base_test_c.svh(96): (vlog-2730) Undefined variable: 'm_spi_env_cfg'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(16)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_controller_only_vseq_c.svh(10): Invalid type 'spi_general_seq_c'. Please check the type of the variable 'spi_cont_seq_h'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(16)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_controller_only_vseq_c.svh(11): Invalid type 'spi_gnrl_constr_seq_c'. Please check the type of the variable 'spi_cont_contr_seq_h'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(16)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_controller_only_vseq_c.svh(28): (vlog-2730) Undefined variable: 'spi_cont_seq_h'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(16)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_controller_only_vseq_c.svh(28): (vlog-2164) Class or package 'spi_general_seq_c' not found.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(16)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_controller_only_vseq_c.svh(28): (vlog-2730) Undefined variable: 'spi_general_seq_c'.
+# ** Error: (vlog-13069) ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(16)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_controller_only_vseq_c.svh(28): near "::": syntax error, unexpected ::, expecting ';'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(16)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_controller_only_vseq_c.svh(30): (vlog-2730) Undefined variable: 'spi_cont_contr_seq_h'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(16)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_controller_only_vseq_c.svh(30): (vlog-2164) Class or package 'spi_gnrl_constr_seq_c' not found.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(16)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_controller_only_vseq_c.svh(30): (vlog-2730) Undefined variable: 'spi_gnrl_constr_seq_c'.
+# ** Error: (vlog-13069) ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(16)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_controller_only_vseq_c.svh(30): near "::": syntax error, unexpected ::, expecting ';'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(17)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_master_only_vseq_c.svh(10): Invalid type 'spi_general_seq_c'. Please check the type of the variable 'spi_mast_seq_h'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(17)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_master_only_vseq_c.svh(11): Invalid type 'spi_gnrl_constr_seq_c'. Please check the type of the variable 'spi_mast_contr_seq_h'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(17)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_master_only_vseq_c.svh(28): (vlog-2730) Undefined variable: 'spi_mast_seq_h'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(17)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_master_only_vseq_c.svh(28): (vlog-2164) Class or package 'spi_general_seq_c' not found.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(17)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_master_only_vseq_c.svh(28): (vlog-2730) Undefined variable: 'spi_general_seq_c'.
+# ** Error: (vlog-13069) ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(17)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_master_only_vseq_c.svh(28): near "::": syntax error, unexpected ::, expecting ';'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(17)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_master_only_vseq_c.svh(30): (vlog-2730) Undefined variable: 'spi_mast_contr_seq_h'.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(17)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_master_only_vseq_c.svh(30): (vlog-2164) Class or package 'spi_gnrl_constr_seq_c' not found.
+# ** Error: ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(17)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_master_only_vseq_c.svh(30): (vlog-2730) Undefined variable: 'spi_gnrl_constr_seq_c'.
+# ** Error: (vlog-13069) ** while parsing file included at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv(17)
+# ** at D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib//spi_master_only_vseq_c.svh(30): near "::": syntax error, unexpected ::, expecting ';'.
+# -- Compiling module spi_tb_top
+# ** Error: D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_tb_top.sv(12): (vlog-13006) Could not find the package (spi_tb_pkg).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# ** Error: D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_tb_top.sv(13): (vlog-13006) Could not find the package (spi_seq_pkg).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# ** Error: D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_tb_top.sv(14): (vlog-13006) Could not find the package (spi_test_pkg).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# End time: 03:54:39 on Jan 12,2024, Elapsed time: 0:00:02
+# Errors: 53, Warnings: 0
+# ** Error: C:/questasim64_2021.1/win64/vlog failed.
+# Error in macro ./scripts/compile_tb.do line 23
+# C:/questasim64_2021.1/win64/vlog failed.
+#     while executing
+# "vlog  $PRJ_PATH//rst_intf.sv \
+# $PRJ_PATH/spi_global_params_pkg.sv \
+# $PRJ_PATH/spi_item/spi_item_pkg.sv \
+# $PRJ_PATH/spi_master_agent/spi_master_agent_p..."
+do scripts/run.do
 # D:/Ali/Courses/Verification-Projects/SPI-uvm
 # QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 12:54:42 on Jan 07,2024
-# vlog -reportprogress 300 D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/rst_intf.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_global_params_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_item/spi_item_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent/spi_master_agent_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent/spi_master_intf.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_controller_agent/spi_controller_agent_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_controller_agent/spi_controller_intf.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_tb_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/seq_lib/spi_seq_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_tb_top.sv "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent/" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_controller_agent/" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_item/" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/seq_lib/" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_checkers/" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/" "+define+def_spi_CLK_PERIOD=10" 
+# Start time: 03:55:04 on Jan 12,2024
+# vlog -reportprogress 300 D:/Ali/Courses/Verification-Projects/SPI-uvm/rtl/SPI_Master.v "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/rtl/" 
+# -- Compiling module SPI_Master
+# 
+# Top level modules:
+# 	SPI_Master
+# End time: 03:55:04 on Jan 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 03:55:05 on Jan 12,2024
+# vlog -reportprogress 300 D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/rst_intf.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_global_params_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_item/spi_item_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent/spi_master_agent_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent/spi_master_intf.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_controller_agent/spi_controller_agent_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_controller_agent/spi_controller_intf.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_tb_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/seq_lib/spi_seq_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/spi_test_pkg.sv D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_tb_top.sv "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_master_agent/" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_controller_agent/" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/spi_item/" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/seq_lib/" "+incdir+D:/Ali/Courses/Verification-Projects/SPI-uvm/spi_master_tb/test_lib/" "+define+def_spi_CLK_PERIOD=10" 
 # -- Compiling interface rst_intf
 # -- Compiling package spi_global_params_pkg
 # -- Compiling package spi_item_pkg
@@ -35,10 +178,10 @@
 # 
 # Top level modules:
 # 	spi_tb_top
-# End time: 12:54:43 on Jan 07,2024, Elapsed time: 0:00:01
+# End time: 03:55:06 on Jan 12,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
-# Start time: 12:54:43 on Jan 07,2024
+# Start time: 03:55:07 on Jan 12,2024
 # vopt -reportprogress 300 spi_tb_top -o top_opt -debugdb "+acc" "+cover=sbecf" 
 # 
 # Top level modules:
@@ -81,6 +224,6 @@
 # -- Optimizing interface spi_controller_intf(fast)
 # -- Optimizing interface spi_master_intf(fast)
 # Optimized design name is top_opt
-# End time: 12:54:48 on Jan 07,2024, Elapsed time: 0:00:05
+# End time: 03:55:14 on Jan 12,2024, Elapsed time: 0:00:07
 # Errors: 0, Warnings: 1
-# active_reset_test_c
+# spi_controller_only_test_c
