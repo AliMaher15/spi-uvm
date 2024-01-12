@@ -48,6 +48,7 @@ endfunction: build_phase
 
 // Task : reset_phase
 task spi_master_driver_c::reset_phase(uvm_phase phase);
+    super.reset_phase(phase);
     cleanup();
 endtask: reset_phase
 
